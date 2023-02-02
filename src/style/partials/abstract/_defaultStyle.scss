@@ -1,0 +1,13 @@
+@use "./variables" as *;
+
+// General 
+.wrapper{
+  max-width: 1300px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+}
+
+html{
+  font-size: 62.5%;
+}

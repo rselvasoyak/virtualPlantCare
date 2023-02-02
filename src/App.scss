@@ -1,0 +1,14 @@
+// Abstracts 
+@use "./style/partials/abstract/variables" as *;
+@use "./style/partials/abstract/defaultStyle";
+
+
+//Base
+@use "./style/partials/base/setup";
+@use "./style/partials/base/typography";
+
+// Components 
+@use "../style/partials/components/buttons";
+
+
+

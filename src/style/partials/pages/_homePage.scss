@@ -1,0 +1,9 @@
+@use "./variables" as *;
+
+h1{
+  text-align: center;
+  background-color: pink;
+  .homeHeader{
+    display: block;
+  }
+}

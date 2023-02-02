@@ -1,0 +1,44 @@
+@use "./variables" as *;
+
+.contentPage{
+  .wrapper{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid red;
+    height: 80vh;
+  }
+  h2{
+    text-transform: uppercase;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    align-self: flex-start;
+    padding: 2rem;
+    border: 2px solid green;
+  }
+
+
+  // Visual Tracker 
+  .resultDisplay{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: 2px solid orange;
+    border-radius: 10px;
+    .onePerWeek{
+      border: 2px solid purple;
+      border-radius: 10px;
+    }
+    .twoPerWeek {
+      border: 2px solid green;
+      border-radius: 10px;
+    }
+    .threePerWeek {
+      border: 2px solid blue;
+      border-radius: 10px;
+    }
+  }
+}
