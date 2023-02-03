@@ -1,20 +1,56 @@
 /* Modules */
-// import { useState } from 'react';
+import { useState, useEffect } from 'react';
 /* Components  */
-
+import firebase from './firebase';
+import { getDatabase, ref, onValue, push, remove } from 'firebase/database';
 /* Assets/Styling */
 import './App.scss';
 
 function App() {
-  // Stateful Variables 
-    // Plant Name 
-    // const [plantName, setPlantName] = useState('')
+  // State
+  const [plantName , setPlantName] = useState([]);
+  const [userInput, setUserInput] = useState("");
 
-  // Plant Name Input Change 
+  // Plant Name Input Change
   const handleInputChange = (e) => {
-      console.log(e.target.value);
-      e.preventDefault();
+      setUserInput(e.target.value);
   }
+
+  // Store the state in Firebase 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(userInput)
+    
+    const database = getDatabase(firebase);
+    const dbRef = ref(database);
+    push(dbRef, userInput);
+    setUserInput('')
+  }
+
+  // Deleting the Plant
+  const handleRemovePlant = (plantKey) => {
+    const database = getDatabase(firebase);
+    const dbRef = ref(database, `${plantKey}`);
+    remove(dbRef);
+  }
+
+  // useEffect - use useEffect to run side effects each time the component mounts.
+  useEffect(() => {
+      const database = getDatabase(firebase);
+      const dbRef = ref(database);
+
+    onValue ( dbRef , (response) => {
+      const plantInfo = response.val();
+      const newPlantInfo = []; 
+
+      for (let key in plantInfo) {
+        newPlantInfo.push({key: key, name: plantInfo[key]})
+      }
+      setPlantName(newPlantInfo);
+    })
+
+  }, [])
+   
   return (
    <main>
     {/* <section className="homePage">
@@ -25,15 +61,14 @@ function App() {
         <h2>let's take care of them</h2>
         <form>
           <div className="plantName">
-            <label htmlFor='plantName'> Plant Name </label>
+            <label htmlFor="plantName"> Plant Name </label>
             <input 
             type="text"
             id="plantName"
-            placeholder="Input Here"
-            required
             onChange={handleInputChange}
-            onSubmit={handleInputChange}/>
-            <button className="check"> Completed </button>
+            value={userInput}
+            />
+            <button className="check" onClick={handleSubmit}> Add </button>
           </div>
           <div className="plantCare">
               <label htmlFor="wateringFreq">Watering Frequency</label>
@@ -50,7 +85,7 @@ function App() {
           </div>
         </form>
 
-        <div className="visualTracker">
+        {/* <div className="visualTracker">
           <h3>Inputted Plant Name</h3>
           <div className="resultDisplay">
             <div className='onePerWeek'>
@@ -68,9 +103,23 @@ function App() {
                 <p>You made your water happy! </p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <button> Reset The Week </button>
+
+        {
+          plantName.map((plantsName) => {
+            return(
+              <div key={plantsName.key}>
+                <h2>{plantsName.name}</h2>
+                <div className="visualTracker">Container</div>
+                <button onClick = { () => {
+                  handleRemovePlant(plantsName.key)
+                }}> Remove </button>
+              </div>
+            )
+          })
+        }
       </div> {/* End of wrapper */}
     </section> {/* End of Content Page */}
    </main>
@@ -78,6 +127,18 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Pseudo Code 
@@ -101,3 +162,12 @@ export default App;
 		 // the updated information will be stored in Firebase. 
 
 // By the end of the week, the user can press 'How did I do?' button which  will turn conditionally render the color of the visual chart for green or red based on if they reached their goal or not. ../
+
+
+
+
+
+
+
+
+
