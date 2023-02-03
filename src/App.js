@@ -8,8 +8,9 @@ import './App.scss';
 
 function App() {
   // State
-  const [plantName , setPlantName] = useState([]);
+  const [plants , setPlants] = useState([]);
   const [userInput, setUserInput] = useState("");
+  const [waterChoice, setWaterChoice] = useState("0");
 
   // Plant Name Input Change
   const handleInputChange = (e) => {
@@ -19,20 +20,49 @@ function App() {
   // Store the state in Firebase 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(userInput)
-    
-    const database = getDatabase(firebase);
-    const dbRef = ref(database);
-    push(dbRef, userInput);
-    setUserInput('')
-  }
 
+    if (waterChoice !== "0") {
+      const database = getDatabase(firebase);
+      const dbRef = ref(database);
+      push(dbRef, {
+        name: userInput,
+        waterFrequency: waterChoice, 
+        waterCount: 0
+      });
+      setUserInput('')
+      setWaterChoice("0")
+    } else {
+      alert(`Please Choose How Frequently You Want To Water Your Plant`)
+    }
+  }
+  
+  // Water Frequency Change - Conditions 
+  const handleWaterChoice = (waterFreq) => {
+    setWaterChoice(waterFreq.target.value);
+  }
+  
   // Deleting the Plant
   const handleRemovePlant = (plantKey) => {
     const database = getDatabase(firebase);
     const dbRef = ref(database, `${plantKey}`);
     remove(dbRef);
   }
+  // Completed Button
+  const handleCompletedButton = () => {
+    let waterCount = 0;
+    
+    if ( waterCount === 0) {
+      waterCount++
+      console.log(waterCount)
+    } else {
+      alert ("something is not working ther bud")
+    }
+    
+  }
+  // Reset the Week Button 
+   const handleResetWeek = () => {
+    console.log("Resetting")
+   }
 
   // useEffect - use useEffect to run side effects each time the component mounts.
   useEffect(() => {
@@ -40,15 +70,14 @@ function App() {
       const dbRef = ref(database);
 
     onValue ( dbRef , (response) => {
-      const plantInfo = response.val();
-      const newPlantInfo = []; 
+      const plants = response.val();
+      const newPlants = []; 
 
-      for (let key in plantInfo) {
-        newPlantInfo.push({key: key, name: plantInfo[key]})
+      for (let key in plants) {
+        newPlants.push({key: key, ...plants[key]})
       }
-      setPlantName(newPlantInfo);
+      setPlants(newPlants);
     })
-
   }, [])
    
   return (
@@ -68,53 +97,38 @@ function App() {
             onChange={handleInputChange}
             value={userInput}
             />
-            <button className="check" onClick={handleSubmit}> Add </button>
           </div>
           <div className="plantCare">
               <label htmlFor="wateringFreq">Watering Frequency</label>
               <select 
               type="dropdown"
               id="wateringFreq"
-              defaultValue = "How frequently do you need to water your plant?"
+              value = { waterChoice }
+              onChange={ handleWaterChoice }
+              defaultValue = "2"
               required>
-                <option value= "How frequently do you need to water your plant?"  disabled></option>
+                <option value ="0" disabled> hey </option>
                 <option value="1">1 time per week</option>
                 <option value="2">2 times per week</option>
                 <option value="3">3 times per week</option>
               </select>
           </div>
+            <button className="check" onClick={handleSubmit}> Add </button>
         </form>
 
-        {/* <div className="visualTracker">
-          <h3>Inputted Plant Name</h3>
-          <div className="resultDisplay">
-            <div className='onePerWeek'>
-                <p>You made your water happy! </p>
-            </div>
-            <div className='twoPerWeek'>
-                <p>You made your water happy! </p>
-                <p>You made your water happy! </p>
-            </div>
-            <div className='threePerWeek'>
-                <p>You made your water happy! </p>
-                <p>You made your water happy! </p>
-                <p>You made your water happy! </p>
-                <p>You made your water happy! </p>
-                <p>You made your water happy! </p>
-            </div>
-          </div>
-        </div> */}
-
-        <button> Reset The Week </button>
-
+        <button onClick={ handleResetWeek }> Reset The Week </button>
         {
-          plantName.map((plantsName) => {
+          plants.map((plant) => {
+            const { name , key, waterFrequency  } = plant;
             return(
-              <div key={plantsName.key}>
-                <h2>{plantsName.name}</h2>
-                <div className="visualTracker">Container</div>
+              <div className="wrapper" key={key}>
+                <h2>{name}</h2>
+                <div className="visualTracker"> Water Freq: {waterFrequency}Container</div>
+                <button onClick = { handleCompletedButton }>
+                  Completed
+                </button>
                 <button onClick = { () => {
-                  handleRemovePlant(plantsName.key)
+                  handleRemovePlant(key)
                 }}> Remove </button>
               </div>
             )
@@ -138,7 +152,25 @@ export default App;
 
 
 
-
+      // {/* <div className="visualTracker">
+      //     <h3>Inputted Plant Name</h3>
+      //     <div className="resultDisplay">
+      //       <div className='onePerWeek'>
+      //           <p>You made your water happy! </p>
+      //       </div>
+      //       <div className='twoPerWeek'>
+      //           <p>You made your water happy! </p>
+      //           <p>You made your water happy! </p>
+      //       </div>
+      //       <div className='threePerWeek'>
+      //           <p>You made your water happy! </p>
+      //           <p>You made your water happy! </p>
+      //           <p>You made your water happy! </p>
+      //           <p>You made your water happy! </p>
+      //           <p>You made your water happy! </p>
+      //       </div>
+      //     </div>
+      //   </div> */}
 
 
 // Pseudo Code 
