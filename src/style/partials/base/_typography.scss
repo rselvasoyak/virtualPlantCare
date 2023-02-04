@@ -1,17 +1,42 @@
-// @use "./variables" as *;
 
 // Typography
 h1{
-  background-color: red;
+  font-size: 9rem;
+  font-family: 'Sunny Spells', sans-serif;
+  text-transform: uppercase;
 }
 
 h2{
-  font-size: 6rem;
+  font-size: 8rem;
+  font-family: 'Sunny Spells', sans-serif;
+  text-transform: uppercase;
 }
-  // Form
-     label{
-      font-size: 2rem;
-    }
-    input{
-      font-size: 2rem;
-    }
+
+h3{ 
+  font-size: 6rem;
+  font-family: 'Sunny Spells', sans-serif;
+  text-transform: uppercase;
+}
+
+
+// Form
+label{
+  font-size: 2.5rem;
+  padding-left: 1rem;
+  margin-right: 1rem;
+  // font-family: 
+}
+input{
+  font-size: 2.5rem;
+  padding-left: 1rem;
+  // font-family: 
+}
+select {
+  font-size: 1.8rem;
+  // font-family: 
+    // option{
+    //    font-family: 
+    // }
+}
+  
+  

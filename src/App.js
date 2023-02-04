@@ -49,15 +49,9 @@ function App() {
   }
   // Completed Button
   const handleCompletedButton = () => {
-    let waterCount = 0;
-    
-    if ( waterCount === 0) {
-      waterCount++
-      console.log(waterCount)
-    } else {
-      alert ("something is not working ther bud")
-    }
-    
+    // const waterCount = () => {
+    //   console.log('completed')
+    // }
   }
   // Reset the Week Button 
    const handleResetWeek = () => {
@@ -81,62 +75,72 @@ function App() {
   }, [])
    
   return (
-   <main>
-    {/* <section className="homePage">
-    <h1> Leaf-by-Leaf <span className="homeHeader">Let's Become</span> <span className="homeHeader">Better Plant Parents</span></h1>
-    </section> */}
-    <section className="contentPage">
-      <div className="wrapper">
-        <h2>let's take care of them</h2>
-        <form>
-          <div className="plantName">
-            <label htmlFor="plantName"> Plant Name </label>
-            <input 
-            type="text"
-            id="plantName"
-            onChange={handleInputChange}
-            value={userInput}
-            />
-          </div>
-          <div className="plantCare">
-              <label htmlFor="wateringFreq">Watering Frequency</label>
-              <select 
-              type="dropdown"
-              id="wateringFreq"
-              value = { waterChoice }
-              onChange={ handleWaterChoice }
-              defaultValue = "2"
-              required>
-                <option value ="0" disabled> hey </option>
-                <option value="1">1 time per week</option>
-                <option value="2">2 times per week</option>
-                <option value="3">3 times per week</option>
-              </select>
-          </div>
-            <button className="check" onClick={handleSubmit}> Add </button>
-        </form>
-
-        <button onClick={ handleResetWeek }> Reset The Week </button>
-        {
-          plants.map((plant) => {
-            const { name , key, waterFrequency  } = plant;
-            return(
-              <div className="wrapper" key={key}>
-                <h2>{name}</h2>
-                <div className="visualTracker"> Water Freq: {waterFrequency}Container</div>
-                <button onClick = { handleCompletedButton }>
-                  Completed
-                </button>
-                <button onClick = { () => {
-                  handleRemovePlant(key)
-                }}> Remove </button>
+    <>
+      <main>
+        {/* <section className="homePage">
+        <h1> Leaf-by-Leaf <span className="homeHeader">Let's Become</span> <span className="homeHeader">Better Plant Parents</span></h1>
+        </section> */}
+        <section className="contentPage">
+          <nav> </nav>
+          <div className="wrapper">
+            <h2>let's take care of them</h2>
+            <form>
+              <div className="plantName">
+                <label htmlFor="plantName"> Plant Name </label>
+                <input 
+                type="text"
+                id="plantName"
+                onChange={ handleInputChange }
+                value={ userInput }
+                />
               </div>
-            )
-          })
-        }
-      </div> {/* End of wrapper */}
-    </section> {/* End of Content Page */}
-   </main>
+              <div className="plantCare">
+                  <label htmlFor="wateringFreq">Watering Frequency</label>
+                  <select 
+                  type="dropdown"
+                  id="wateringFreq"
+                  value = { waterChoice }
+                  onChange={ handleWaterChoice }
+                  defaultValue = "2"
+                  required>
+                    <option value ="0" disabled> Watering Frequency </option>
+                    <option value="1">1 time per week</option>
+                    <option value="2">2 times per week</option>
+                    <option value="3">3 times per week</option>
+                  </select>
+              </div>
+                <button className="add" onClick={ handleSubmit }> Add </button>
+            </form>
+
+            <button className="reset" onClick={ handleResetWeek }> Reset The Week </button>
+            {
+              plants.map((plant) => {
+                const { name , key, waterFrequency  } = plant;
+                return(
+                  <section className="resultDisplay">
+                    <div className="wrapper" key={key}>
+                      <h3>{name}</h3>
+                      <div className="progressBox"> 
+                      {/* Water Freq: { waterFrequency }Container */}
+                        <div class="progress"></div>
+                      </div>
+                      <div>
+                        <button className='complete' onClick = { handleCompletedButton }>
+                          Completed
+                        </button>
+                        <button className="remove" onClick = { () => {
+                          handleRemovePlant(key)
+                        }}> Remove </button>
+                      </div>
+                    </div>
+                  </section>
+                )
+              })
+            }
+          </div> {/* End of wrapper */}
+        </section> {/* End of Content Page */}
+      </main>
+    </>
   );
 }
 

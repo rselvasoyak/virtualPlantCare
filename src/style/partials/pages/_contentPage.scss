@@ -1,44 +1,72 @@
 @use "../abstract/variables" as *;
 
 .contentPage{
+
   .wrapper{
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border: 2px solid red;
-    height: 80vh;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 15px;
   }
-  h2{
-    text-transform: uppercase;
-  }
+
   form{
     display: flex;
     flex-direction: column;
-    width: 60%;
-    align-self: flex-start;
+    width: 80%;
+    height: 30vh;
+    align-self: center;
     padding: 2rem;
+    border-radius: 15px;
     border: 2px solid green;
+    input, select, .add {
+      margin: 2rem 0 2rem 0;
+    }
   }
-
 
   // Visual Tracker 
   .resultDisplay{
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    border: 2px solid orange;
+    width: 90%;
+    .wrapper {
+    background-color: $lightGreen;
+    padding: 3rem;
+    box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    .onePerWeek{
-      border: 2px solid purple;
-      border-radius: 10px;
+      h3{
+      margin-top: 0;
+      margin-bottom: 1.5rem;
     }
-    .twoPerWeek {
-      border: 2px solid green;
+    .progressBox{
+      width: 40rem;
+      height: 7rem;
+      border: 2px solid $darkGreen;
+      background-color: $white;
       border-radius: 10px;
+      margin-top: .5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: -2px 4px 4px rgba(0, 0, 0, 0.1);
+      .progress {
+        // Width will change based on the water frequency and completion button. 
+        width: 60%;
+        height: 100%;
+        border-radius: 10px;
+        background-color: $apricot;
+      }
     }
-    .threePerWeek {
-      border: 2px solid blue;
-      border-radius: 10px;
     }
+    // .onePerWeek{
+    //   border: 2px solid purple;
+    //   border-radius: 10px;
+    // }
+    // .twoPerWeek {
+    //   border: 2px solid green;
+    //   border-radius: 10px;
+    // }
+    // .threePerWeek {
+    //   border: 2px solid blue;
+    //   border-radius: 10px;
+    // }
   }
 }

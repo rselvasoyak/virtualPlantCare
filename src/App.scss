@@ -1,7 +1,12 @@
 // Abstracts 
 @use "./style/partials/abstract/variables" as *;
 @use "./style/partials/abstract/defaultStyle";
+@use "./style/partials/abstract/mediaQuery";
+// 
 
+
+// Assets 
+@use "./style/assets/fonts/fonts";
 
 //Base
 @use "./style/partials/base/setup";
