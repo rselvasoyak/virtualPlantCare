@@ -1,72 +1,71 @@
 @use "../abstract/variables" as *;
 
 .contentPage{
-
   .wrapper{
     flex-direction: column;
     align-items: center;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
     border-radius: 15px;
-  }
-
-  form{
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    height: 30vh;
-    align-self: center;
-    padding: 2rem;
-    border-radius: 15px;
-    border: 2px solid green;
-    input, select, .add {
-      margin: 2rem 0 2rem 0;
+    h2{
+      background-color: $darkGreen;
+      text-shadow: -6px 5px 2px rgba(0, 0, 0, 0.5);
+      color: $white;
+      width: 100vw;
+      text-align: center;
+      padding: 4rem;
+      margin-top: 0;
+    }
+    form{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-self: center;
+      padding: 4rem;
+      border-radius: 15px;
+      border: 2px solid green;
+      .plantInfo{
+        display: flex;
+        justify-content: space-evenly;
+      }
+      input, select, .add {
+        margin: 2rem 0 2rem 0;
+      }
     }
   }
+
 
   // Visual Tracker 
   .resultDisplay{
     display: flex;
     justify-content: space-between;
-    width: 90%;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    width: 100%;
     .wrapper {
-    background-color: $lightGreen;
-    padding: 3rem;
-    box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+      background-color: $lightGreen;
+      padding: 3rem;
+      box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
       h3{
       margin-top: 0;
       margin-bottom: 1.5rem;
-    }
-    .progressBox{
-      width: 40rem;
-      height: 7rem;
-      border: 2px solid $darkGreen;
-      background-color: $white;
-      border-radius: 10px;
-      margin-top: .5rem;
-      margin-bottom: 2.5rem;
-      box-shadow: -2px 4px 4px rgba(0, 0, 0, 0.1);
-      .progress {
-        // Width will change based on the water frequency and completion button. 
-        width: 60%;
-        height: 100%;
+      }
+      .progressBox{
+        width: 40rem;
+        height: 7rem;
+        border: 2px solid $darkGreen;
+        background-color: $white;
         border-radius: 10px;
-        background-color: $apricot;
+        margin-top: .5rem;
+        margin-bottom: 2.5rem;
+        box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3);
+        .progress {
+          // Width will change based on the water frequency and completion button. 
+          width: 60%;
+          height: 100%;
+          border-radius: 10px;
+          background-color: $apricot;
+        }
       }
     }
-    }
-    // .onePerWeek{
-    //   border: 2px solid purple;
-    //   border-radius: 10px;
-    // }
-    // .twoPerWeek {
-    //   border: 2px solid green;
-    //   border-radius: 10px;
-    // }
-    // .threePerWeek {
-    //   border: 2px solid blue;
-    //   border-radius: 10px;
-    // }
   }
 }

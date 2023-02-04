@@ -13,8 +13,8 @@ html {
 /* Portrait tablet and small desktops */
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
-  h2 {
-    font-size: 2rem;
+  .contentPage h2 {
+    font-size: 6rem;
   }
 }
 /* Landscape phones and down */
@@ -254,7 +254,7 @@ h1 {
 }
 
 h2 {
-  font-size: 8rem;
+  font-size: 10rem;
   font-family: "Sunny Spells", sans-serif;
   text-transform: uppercase;
 }
@@ -359,32 +359,44 @@ select {
 .contentPage .wrapper {
   flex-direction: column;
   align-items: center;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
   border-radius: 15px;
 }
-.contentPage form {
+.contentPage .wrapper h2 {
+  background-color: #606738;
+  text-shadow: -6px 5px 2px rgba(0, 0, 0, 0.5);
+  color: #ddd;
+  width: 100vw;
+  text-align: center;
+  padding: 4rem;
+  margin-top: 0;
+}
+.contentPage .wrapper form {
   display: flex;
   flex-direction: column;
-  width: 80%;
-  height: 30vh;
+  width: 100%;
   align-self: center;
-  padding: 2rem;
+  padding: 4rem;
   border-radius: 15px;
   border: 2px solid green;
 }
-.contentPage form input, .contentPage form select, .contentPage form .add {
+.contentPage .wrapper form .plantInfo {
+  display: flex;
+  justify-content: space-evenly;
+}
+.contentPage .wrapper form input, .contentPage .wrapper form select, .contentPage .wrapper form .add {
   margin: 2rem 0 2rem 0;
 }
 .contentPage .resultDisplay {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  width: 100%;
 }
 .contentPage .resultDisplay .wrapper {
   background-color: #98C379;
   padding: 3rem;
-  box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
 }
 .contentPage .resultDisplay .wrapper h3 {
@@ -399,7 +411,7 @@ select {
   border-radius: 10px;
   margin-top: 0.5rem;
   margin-bottom: 2.5rem;
-  box-shadow: -2px 4px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 .contentPage .resultDisplay .wrapper .progressBox .progress {
   width: 60%;

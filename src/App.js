@@ -81,33 +81,39 @@ function App() {
         <h1> Leaf-by-Leaf <span className="homeHeader">Let's Become</span> <span className="homeHeader">Better Plant Parents</span></h1>
         </section> */}
         <section className="contentPage">
-          <nav> </nav>
+          {/* <nav> 
+            <ul>
+              <li>My Plants</li>
+            </ul>
+          </nav> */}
           <div className="wrapper">
             <h2>let's take care of them</h2>
             <form>
-              <div className="plantName">
-                <label htmlFor="plantName"> Plant Name </label>
-                <input 
-                type="text"
-                id="plantName"
-                onChange={ handleInputChange }
-                value={ userInput }
-                />
-              </div>
-              <div className="plantCare">
-                  <label htmlFor="wateringFreq">Watering Frequency</label>
-                  <select 
-                  type="dropdown"
-                  id="wateringFreq"
-                  value = { waterChoice }
-                  onChange={ handleWaterChoice }
-                  defaultValue = "2"
-                  required>
-                    <option value ="0" disabled> Watering Frequency </option>
-                    <option value="1">1 time per week</option>
-                    <option value="2">2 times per week</option>
-                    <option value="3">3 times per week</option>
-                  </select>
+              <div className="plantInfo">
+                <div className="plantName">
+                  <label htmlFor="plantName"> Plant Name </label>
+                  <input 
+                  type="text"
+                  id="plantName"
+                  onChange={ handleInputChange }
+                  value={ userInput }
+                  />
+                </div>
+                <div className="plantCare">
+                    <label htmlFor="wateringFreq">Watering Frequency</label>
+                    <select 
+                    type="dropdown"
+                    id="wateringFreq"
+                    value = { waterChoice }
+                    onChange={ handleWaterChoice }
+                    defaultValue = "2"
+                    required>
+                      <option value ="0" disabled> Watering Frequency </option>
+                      <option value="1">1 time per week</option>
+                      <option value="2">2 times per week</option>
+                      <option value="3">3 times per week</option>
+                    </select>
+                </div>{/* plant care ending */}
               </div>
                 <button className="add" onClick={ handleSubmit }> Add </button>
             </form>
