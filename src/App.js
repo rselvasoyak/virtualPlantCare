@@ -34,11 +34,11 @@ function App() {
       push(dbRef, {
         name: userInput,
         waterFrequency: parseInt(waterChoice), 
-        waterCount: waterCountNow,
+        waterCount: 0,
       });
       setUserInput('')
       setWaterChoice("0");
-      scrollDown(containerRef);
+      // scrollDown(containerRef);
     } else {
       alert(`Please Choose How Frequently You Want To Water Your Plant`)
     }
