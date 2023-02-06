@@ -1,5 +1,5 @@
 /* Modules */
-import { useState, useEffect, useRef} from 'react';
+import { useState, useEffect } from 'react';
 /* Components  */
 import firebase from './firebase';
 import { getDatabase, ref, onValue, push, remove, update} from 'firebase/database';
@@ -11,7 +11,6 @@ function App() {
   const [plants , setPlants] = useState([]);
   const [userInput, setUserInput] = useState("");
   const [waterChoice, setWaterChoice] = useState("0");
-  const [waterCountNow, setWaterCountNow] = useState(0);
 
   // Plant Name Input Change
   const handleInputChange = (e) => {
@@ -144,7 +143,7 @@ function App() {
                 const newWidth = `${(waterCount/waterFrequency) * 100}%`
                 return(
                   <section className="resultDisplay">
-                    <div /* ref={containerRef}  */ className="wrapper" key={key}>
+                    <div className="wrapper" key={key}>
                       <h3>{name}</h3>
                       <div className="progressBox"> 
                         <div className="progress" style={{"width": newWidth}}></div>
