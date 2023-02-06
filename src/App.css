@@ -360,14 +360,16 @@ select {
   flex-direction: column;
   align-items: center;
   border-radius: 15px;
+  margin-bottom: 5rem;
 }
 .contentPage .wrapper h2 {
   background-color: #606738;
   text-shadow: -6px 5px 2px rgba(0, 0, 0, 0.5);
   color: #ddd;
   width: 100vw;
+  height: 63vh;
   text-align: center;
-  padding: 4rem;
+  padding: 28vh 4rem 4rem 4rem;
   margin-top: 0;
 }
 .contentPage .wrapper form {
@@ -375,7 +377,8 @@ select {
   flex-direction: column;
   width: 100%;
   align-self: center;
-  padding: 4rem;
+  padding: 7rem;
+  margin-bottom: 2rem;
   border-radius: 15px;
   border: 2px solid green;
 }
@@ -417,7 +420,7 @@ select {
   width: 60%;
   height: 100%;
   border-radius: 10px;
-  background-color: #e09132;
+  background-color: #005493;
 }
 
 h1 {

@@ -1,8 +1,8 @@
 /* Modules */
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef} from 'react';
 /* Components  */
 import firebase from './firebase';
-import { getDatabase, ref, onValue, push, remove } from 'firebase/database';
+import { getDatabase, ref, onValue, push, remove, update} from 'firebase/database';
 /* Assets/Styling */
 import './App.scss';
 
@@ -11,26 +11,35 @@ function App() {
   const [plants , setPlants] = useState([]);
   const [userInput, setUserInput] = useState("");
   const [waterChoice, setWaterChoice] = useState("0");
+  const [waterCountNow, setWaterCountNow] = useState(0);
 
   // Plant Name Input Change
   const handleInputChange = (e) => {
       setUserInput(e.target.value);
   }
 
+  // Scroll down to the container
+  const scrollDown = (containerRef) => {
+    containerRef.current.scrollIntoView({ 
+      behavior: "smooth", 
+      block: "start" 
+    });
+  }
+
   // Store the state in Firebase 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (waterChoice !== "0") {
       const database = getDatabase(firebase);
       const dbRef = ref(database);
       push(dbRef, {
         name: userInput,
-        waterFrequency: waterChoice, 
-        waterCount: 0
+        waterFrequency: parseInt(waterChoice), 
+        waterCount: waterCountNow,
       });
       setUserInput('')
-      setWaterChoice("0")
+      setWaterChoice("0");
+      scrollDown(containerRef);
     } else {
       alert(`Please Choose How Frequently You Want To Water Your Plant`)
     }
@@ -39,7 +48,7 @@ function App() {
   // Water Frequency Change - Conditions 
   const handleWaterChoice = (waterFreq) => {
     setWaterChoice(waterFreq.target.value);
-  }
+  } 
   
   // Deleting the Plant
   const handleRemovePlant = (plantKey) => {
@@ -47,18 +56,22 @@ function App() {
     const dbRef = ref(database, `${plantKey}`);
     remove(dbRef);
   }
+
   // Completed Button
-  const handleCompletedButton = () => {
-    // const waterCount = () => {
-    //   console.log('completed')
-    // }
+  const handleCompletedButton = (plant) => {
+    const { waterCount, key } = plant;
+    const database = getDatabase(firebase);
+    const dbRef = ref(database, `/${key}`);
+    update( dbRef, {
+      ...plant, 
+      waterCount: waterCount + 1
+    })
   }
   // Reset the Week Button 
    const handleResetWeek = () => {
     console.log("Resetting")
    }
 
-  // useEffect - use useEffect to run side effects each time the component mounts.
   useEffect(() => {
       const database = getDatabase(firebase);
       const dbRef = ref(database);
@@ -73,7 +86,17 @@ function App() {
       setPlants(newPlants);
     })
   }, [])
-   
+
+  // Scrolling down to the new plant 
+  // const containerRef = useRef(null);
+  // useEffect(() => {
+  //   if (containerRef.current !== null) {
+  //     containerRef.current.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "start"
+  //     });
+  //   }
+  // }, [plants]);
   return (
     <>
       <main>
@@ -81,11 +104,6 @@ function App() {
         <h1> Leaf-by-Leaf <span className="homeHeader">Let's Become</span> <span className="homeHeader">Better Plant Parents</span></h1>
         </section> */}
         <section className="contentPage">
-          {/* <nav> 
-            <ul>
-              <li>My Plants</li>
-            </ul>
-          </nav> */}
           <div className="wrapper">
             <h2>let's take care of them</h2>
             <form>
@@ -115,23 +133,28 @@ function App() {
                     </select>
                 </div>{/* plant care ending */}
               </div>
-                <button className="add" onClick={ handleSubmit }> Add </button>
+                <button className="add" 
+                onClick={ handleSubmit }> Add </button>
             </form>
 
             <button className="reset" onClick={ handleResetWeek }> Reset The Week </button>
             {
               plants.map((plant) => {
-                const { name , key, waterFrequency  } = plant;
+                const { name , key, waterFrequency, waterCount } = plant;
+                const newWidth = `${(waterCount/waterFrequency) * 100}%`
                 return(
                   <section className="resultDisplay">
-                    <div className="wrapper" key={key}>
+                    <div /* ref={containerRef}  */ className="wrapper" key={key}>
                       <h3>{name}</h3>
                       <div className="progressBox"> 
-                      {/* Water Freq: { waterFrequency }Container */}
-                        <div class="progress"></div>
+                        <div className="progress" style={{"width": newWidth}}></div>
                       </div>
                       <div>
-                        <button className='complete' onClick = { handleCompletedButton }>
+                        <button 
+                        className='complete'
+                        disabled={waterCount === waterFrequency ? true : false} 
+                        onClick = { () => handleCompletedButton(plant) }
+                        >
                           Completed
                         </button>
                         <button className="remove" onClick = { () => {
@@ -146,41 +169,14 @@ function App() {
           </div> {/* End of wrapper */}
         </section> {/* End of Content Page */}
       </main>
+      <footer>
+        <h4> Created at Juno College of Technology, by <a href="https://ranasoyakcodes.dev/">Rana Soyak</a></h4>
+      </footer>
     </>
   );
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-      // {/* <div className="visualTracker">
-      //     <h3>Inputted Plant Name</h3>
-      //     <div className="resultDisplay">
-      //       <div className='onePerWeek'>
-      //           <p>You made your water happy! </p>
-      //       </div>
-      //       <div className='twoPerWeek'>
-      //           <p>You made your water happy! </p>
-      //           <p>You made your water happy! </p>
-      //       </div>
-      //       <div className='threePerWeek'>
-      //           <p>You made your water happy! </p>
-      //           <p>You made your water happy! </p>
-      //           <p>You made your water happy! </p>
-      //           <p>You made your water happy! </p>
-      //           <p>You made your water happy! </p>
-      //       </div>
-      //     </div>
-      //   </div> */}
 
 
 // Pseudo Code 
