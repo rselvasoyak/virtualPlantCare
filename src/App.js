@@ -19,12 +19,12 @@ function App() {
   }
 
   // Scroll down to the container
-  const scrollDown = (containerRef) => {
-    containerRef.current.scrollIntoView({ 
-      behavior: "smooth", 
-      block: "start" 
-    });
-  }
+  // const scrollDown = (containerRef) => {
+  //   containerRef.current.scrollIntoView({ 
+  //     behavior: "smooth", 
+  //     block: "start" 
+  //   });
+  // }
 
   // Store the state in Firebase 
   const handleSubmit = (e) => {
