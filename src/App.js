@@ -3,7 +3,10 @@ import { useState, useEffect, useRef } from 'react';
 /* Components  */
 import firebase from './firebase';
 import { getDatabase, ref, onValue, push, remove, update} from 'firebase/database';
+import Header from './components/Header';
+import Form from './components/Form';
 import PlantList from './components/PlantList';
+import Footer from './components/Footer';
 /* Assets/Styling */
 import './App.scss';
 
@@ -101,46 +104,20 @@ function App() {
   return (
     <>
       <main>
-        <section className="homePage">
-            <h1> Leaf-by-Leaf <span className="homeHeader">Let's Become</span> <span className="homeHeader">Better Plant Parents</span></h1>
-            <button className="changePage">Let's Do It!</button>
-        </section>
+      <Header/>
         <section className="contentPage">
           <div className="wrapper">
             <div className="h2">
               <h2>let's take care of them</h2>
             </div>
-            <form>
-              <div className="plantInfo">
-                <div className="plantName">
-                  <label htmlFor="plantName"> Plant Name </label>
-                  <input 
-                  type="text"
-                  id="plantName"
-                  onChange={ handleInputChange }
-                  value={ userInput }
-                  />
-                </div>
-                <div className="plantCare">
-                    <label htmlFor="wateringFreq">Watering Frequency</label>
-                    <select 
-                    type="dropdown"
-                    id="wateringFreq"
-                    value = { waterChoice }
-                    onChange={ handleWaterChoice }
-                    defaultValue = "2"
-                    required>
-                      <option value ="0" disabled> Watering Frequency </option>
-                      <option value="1">1 time per week</option>
-                      <option value="2">2 times per week</option>
-                      <option value="3">3 times per week</option>
-                    </select>
-                </div>{/* plant care ending */}
-              </div>
-                <button className="add" 
-                onClick={ handleSubmit }> Add </button>
-                <button className="reset" onClick={ handleResetWeek }> Reset The Week </button>
-            </form>
+          <Form 
+          waterChoice = { waterChoice}
+          handleWaterChoice = { handleWaterChoice }
+          handleSubmit = { handleSubmit }
+          handleResetWeek = { handleResetWeek }
+          userInput = { userInput }
+          handleInputChange = { handleInputChange }
+          />
           <PlantList 
             plants={plants} 
             handleRemovePlant={handleRemovePlant} 
@@ -150,9 +127,7 @@ function App() {
           </div> {/* End of wrapper */}
         </section> {/* End of Content Page */}
       </main>
-      <footer>
-        <h4> Created at Juno College of Technology, by <a href="https://ranasoyakcodes.dev/">Rana Soyak</a></h4>
-      </footer>
+      <Footer />
     </>
   );
 }
