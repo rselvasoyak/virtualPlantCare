@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 /* Components  */
 import firebase from './firebase';
 import { getDatabase, ref, onValue, push, remove, update} from 'firebase/database';
-import Header from './components/Header';
+import HomePage from './components/HomePage';
 import Form from './components/Form';
 import PlantList from './components/PlantList';
 import Footer from './components/Footer';
@@ -104,7 +104,7 @@ function App() {
   return (
     <>
       <main>
-      <Header/>
+      <HomePage />
         <section className="contentPage">
           <div className="wrapper">
             <div className="h2">
