@@ -152,7 +152,7 @@ function App() {
                       <div className="progressBox"> 
                         <div className="progress" style={{"width": newWidth}}></div>
                       </div>
-                      <div>
+                      <div className="plantButtons">
                         <button 
                         className='complete'
                         disabled={waterCount === waterFrequency ? true : false} 
