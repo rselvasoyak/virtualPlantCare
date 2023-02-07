@@ -1,0 +1,92 @@
+@use "../abstract/variables" as *;
+
+.contentPage{
+  .wrapper{
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    .h2{
+      background-color: $darkGreen;
+      background-image: url(../../assets/plant.png);
+      background-repeat: no-repeat;
+      background-position: -40% 50%;
+      object-fit: contain;
+      z-index: -10;
+      text-shadow: -6px 5px 2px $textShadow;
+      color: $white;
+      width: 100vw;
+      height: 55vh;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1vh;
+      box-shadow: -1px 2px 4px $boxShadow;
+    }
+    form{
+      height: 40vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      align-self: center;
+      border-radius: 15px;
+      border: 4px solid $darkGreen;
+      box-shadow: -4px 4px 6px $boxShadow;
+      .plantInfo{
+        display: flex;
+        justify-content: space-evenly;
+      }
+      input, select{
+        margin: 2rem 0 5rem 0;
+        border-radius: 10px;
+      }
+      label{
+        text-shadow: -0.6px 0.6px  $textShadow;
+      }
+    }
+  }
+
+  // Visual Tracker 
+  .resultDisplay{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3.5rem;
+    margin-bottom: 3rem;
+    width: 100%;
+    .wrapper {
+      background-color: $lightGreen;
+      padding: 3rem;
+      box-shadow: -4px 4px 4px $boxShadow;
+      border-radius: 10px;
+      h3{
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+      }
+      .progressBox{
+        width: 40rem;
+        height: 7rem;
+        border: 2px solid $darkGreen;
+        background-color: $white;
+        border-radius: 10px;
+        margin-top: .5rem;
+        margin-bottom: 2.5rem;
+        box-shadow: -2px 2px 4px $boxShadow;
+        .progress {
+          width: 60%;
+          height: 100%;
+          border-radius: 8px;
+          background-color: $waterBlue;
+          animation: loading 4s ease-in linear; 
+        }
+      }
+    }
+  }
+}
+
+footer {
+  h4{
+    margin: 1rem 0;
+    text-align: center;
+  }
+}

@@ -1,15 +1,433 @@
-.App {
-  text-align: center;
+.wrapper {
+  max-width: 1500px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
 }
 
-h1{
-  text-align: center;
-  background-color: pink;
+html {
+  font-size: 62.5%;
+  background-color: #F0E6D8;
+}
 
+/* Portrait tablet and small desktops */
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+  .contentPage h2 {
+    font-size: 6rem;
+  }
 }
-h2{
-  text-transform: uppercase;
+/* Landscape phones and down */
+/* Small phones and down */
+@font-face {
+  font-family: "Sunny Spells";
+  src: url("/style/assets/fonts/SunnyspellsRegular-MV9ze.eot");
+  src: url("/style/assets/fonts/SunnyspellsRegular-MV9ze.eot?#iefix") format("embedded-opentype"), url("/style/assets/fonts/SunnyspellsRegular-MV9ze.woff2") format("woff2"), url("/style/assets/fonts/SunnyspellsRegular-MV9ze.woff") format("woff"), url("/style/assets/fonts/SunnyspellsRegular-MV9ze.svg#Sunny Spells") format("svg");
 }
-.homeHeader{
+html {
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+article, aside, footer, header, nav, section {
   display: block;
 }
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+figcaption, figure, main {
+  display: block;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+b, strong {
+  font-weight: inherit;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+audio, video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, html [type=button], [type=reset], [type=submit] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=checkbox], [type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details, menu {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+canvas {
+  display: inline-block;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 9rem;
+  font-family: "Sunny Spells", sans-serif;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 10rem;
+  font-family: "Sunny Spells", sans-serif;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 6rem;
+  font-family: "Sunny Spells", sans-serif;
+  text-transform: uppercase;
+}
+
+label {
+  font-size: 2.5rem;
+  padding-left: 1rem;
+  margin-right: 1rem;
+}
+
+input {
+  font-size: 2.5rem;
+  padding-left: 1rem;
+}
+
+select {
+  font-size: 1.8rem;
+}
+
+.add {
+  border: 2px solid gold;
+  color: #484848;
+  background-color: #FFC107;
+  border: none;
+  width: 40%;
+  align-self: center;
+  border-radius: 7px;
+  padding: 8px 14px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.add:hover, .add:focus {
+  transition: 1s;
+  background-color: #98C379;
+  color: #ddd;
+}
+
+.complete {
+  border: 2px solid blue;
+  background-color: #808080;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 1rem;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.complete:hover, .complete:focus {
+  transition: 1s;
+  background-color: #98C379;
+  color: #ddd;
+}
+
+.remove {
+  border: 2px solid red;
+  background-color: #651616;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  margin: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.remove:hover, .remove:focus {
+  transition: 1s;
+  background-color: #98C379;
+  color: #ddd;
+}
+
+.reset {
+  border: 2px solid purple;
+  background-color: #D3D3D3;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.reset:hover, .reset:focus {
+  transition: 1s;
+  background-color: #98C379;
+  color: #ddd;
+}
+
+.contentPage .wrapper {
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  margin-bottom: 5rem;
+}
+.contentPage .wrapper h2 {
+  background-color: #606738;
+  text-shadow: -6px 5px 2px rgba(0, 0, 0, 0.5);
+  color: #ddd;
+  width: 100vw;
+  height: 63vh;
+  text-align: center;
+  padding: 28vh 4rem 4rem 4rem;
+  margin-top: 0;
+}
+.contentPage .wrapper form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-self: center;
+  padding: 7rem;
+  margin-bottom: 2rem;
+  border-radius: 15px;
+  border: 2px solid green;
+}
+.contentPage .wrapper form .plantInfo {
+  display: flex;
+  justify-content: space-evenly;
+}
+.contentPage .wrapper form input, .contentPage .wrapper form select, .contentPage .wrapper form .add {
+  margin: 2rem 0 2rem 0;
+}
+.contentPage .resultDisplay {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+.contentPage .resultDisplay .wrapper {
+  background-color: #98C379;
+  padding: 3rem;
+  box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+.contentPage .resultDisplay .wrapper h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+.contentPage .resultDisplay .wrapper .progressBox {
+  width: 40rem;
+  height: 7rem;
+  border: 2px solid #606738;
+  background-color: #ddd;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.contentPage .resultDisplay .wrapper .progressBox .progress {
+  width: 60%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #005493;
+}
+
+h1 {
+  text-align: center;
+  background-color: pink;
+}
+h1 .homeHeader {
+  display: block;
+  display: flex;
+}/*# sourceMappingURL=App.css.map */

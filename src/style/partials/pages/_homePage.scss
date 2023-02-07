@@ -1,0 +1,11 @@
+@use "../abstract/variables" as *;
+
+h1{
+  text-align: center;
+  background-color: pink;
+  .homeHeader{
+    display: block;
+    display: flex;
+    justify-content: center;
+  }
+}
