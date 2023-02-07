@@ -38,16 +38,8 @@ const Form = ({
                     </select>
                 </div>{/* plant care ending */}
               </div>
-              {/* <Link 
-                  activeClass="active"
-                  to={plants.key}
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500} > */}
                 <button className="add" 
                 onClick={ handleSubmit }> Add </button>
-              {/* </Link> */}
                 <button className="reset" onClick={ handleResetWeek }> Reset The Week </button>
                 <Link to="/" className="backToHome">
                     Back To Home Page 
