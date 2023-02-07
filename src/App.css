@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap");
 .wrapper {
   max-width: 1500px;
   width: 90%;
@@ -6,23 +7,168 @@
 }
 
 html {
-  font-size: 62.5%;
   background-color: #F0E6D8;
+  font-size: 62.5%;
 }
 
+@media (max-width: 1010px) {
+  .contentPage .h2 {
+    background-position: left;
+  }
+  .contentPage form .plantInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .contentPage form #plantName, .contentPage form #wateringFreq {
+    margin: 1.5rem;
+  }
+  .contentPage form .add {
+    margin-top: 2rem;
+  }
+}
 /* Portrait tablet and small desktops */
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
+  .homePage h1 {
+    font-size: 8rem;
+  }
   .contentPage h2 {
-    font-size: 6rem;
+    font-size: 7rem;
+  }
+  .contentPage form label {
+    font-size: 2rem;
+    padding-left: 1rem;
+    margin-right: 1rem;
+  }
+  .contentPage form input {
+    font-size: 2rem;
+  }
+  .contentPage form select, .contentPage form option {
+    font-size: 2rem;
+  }
+  .contentPage .changePage, .contentPage .add, .contentPage .remove, .contentPage .complete, .contentPage .reset {
+    font-size: 1.6rem;
   }
 }
 /* Landscape phones and down */
+@media (max-width: 480px) {
+  .homePage h1 {
+    font-size: 7rem;
+  }
+  .homePage .changePage {
+    width: 50%;
+  }
+  .contentPage h2 {
+    font-size: 6rem;
+  }
+  .contentPage form label {
+    font-size: 1.6rem;
+    padding-left: 1rem;
+    margin-right: 1rem;
+  }
+  .contentPage form input {
+    font-size: 1.6rem;
+  }
+  .contentPage form select, .contentPage form option {
+    font-size: 1.6rem;
+  }
+  .contentPage form .add, .contentPage form .reset {
+    width: 50%;
+    font-size: 1.6rem;
+  }
+  .contentPage .resultDisplay .wrapper .progressBox {
+    width: 10rem;
+  }
+  .contentPage .resultDisplay .plantButtons {
+    display: flex;
+    justify-content: center;
+  }
+}
 /* Small phones and down */
+@media (max-width: 320px) {
+  .homePage h1 {
+    font-size: 5rem;
+  }
+  .homePage .changePage {
+    width: 50%;
+  }
+  .contentPage h2 {
+    font-size: 4rem;
+  }
+  form {
+    align-content: center;
+  }
+  form label {
+    font-size: 1.6rem;
+    padding-left: 1rem;
+    margin-right: 1rem;
+  }
+  form input {
+    font-size: 1.6rem;
+  }
+  form .plantName, form .plantCare {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  form .add, form .reset {
+    width: 50%;
+    font-size: 1.6rem;
+    padding: 5px 10px;
+  }
+  form .resultDisplay .wrapper .progressBox {
+    width: 10rem;
+  }
+  form .resultDisplay .plantButtons {
+    display: flex;
+    justify-content: center;
+    padding: 4px 9px;
+  }
+  footer h4 {
+    font-size: 1.4rem;
+  }
+}
 @font-face {
   font-family: "Sunny Spells";
   src: url("/style/assets/fonts/SunnyspellsRegular-MV9ze.eot");
   src: url("/style/assets/fonts/SunnyspellsRegular-MV9ze.eot?#iefix") format("embedded-opentype"), url("/style/assets/fonts/SunnyspellsRegular-MV9ze.woff2") format("woff2"), url("/style/assets/fonts/SunnyspellsRegular-MV9ze.woff") format("woff"), url("/style/assets/fonts/SunnyspellsRegular-MV9ze.svg#Sunny Spells") format("svg");
+}
+@-webkit-keyframes loading {
+  0% {
+    width: 0%;
+  }
+  25% {
+    width: 40%;
+  }
+  50% {
+    width: 65%;
+  }
+  75% {
+    width: 80%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  25% {
+    width: 40%;
+  }
+  50% {
+    width: 65%;
+  }
+  75% {
+    width: 80%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 html {
   line-height: 1.15;
@@ -248,7 +394,7 @@ html {
 }
 
 h1 {
-  font-size: 9rem;
+  font-size: 11rem;
   font-family: "Sunny Spells", sans-serif;
   text-transform: uppercase;
 }
@@ -265,142 +411,191 @@ h3 {
   text-transform: uppercase;
 }
 
+h4 {
+  font-size: 1.6rem;
+  font-family: "Archivo Narrow", sans-serif;
+  font-style: italic;
+}
+
 label {
-  font-size: 2.5rem;
+  font-size: 3rem;
+  font-weight: 600;
   padding-left: 1rem;
   margin-right: 1rem;
+  font-family: "Archivo Narrow", sans-serif;
 }
 
 input {
   font-size: 2.5rem;
   padding-left: 1rem;
+  font-family: "Archivo Narrow", sans-serif;
 }
 
-select {
+select, option {
+  font-size: 2.5rem;
+  font-family: "Archivo Narrow", sans-serif;
+}
+
+.changePage {
+  align-self: center;
+  width: 20%;
+  margin-bottom: 2rem;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 7px;
+  color: #484848;
+  background-color: #FFC107;
   font-size: 1.8rem;
+  font-weight: bold;
+  box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: -0.6px 0.6px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.changePage:hover, .changePage:focus {
+  background-color: #98C379;
+  color: #ddd;
+  transition: 1s;
 }
 
 .add {
-  border: 2px solid gold;
+  align-self: center;
+  width: 30%;
+  padding: 8px 14px;
+  margin-bottom: 2rem;
+  border: none;
+  border-radius: 7px;
   color: #484848;
   background-color: #FFC107;
-  border: none;
-  width: 40%;
-  align-self: center;
-  border-radius: 7px;
-  padding: 8px 14px;
   font-size: 1.8rem;
   font-weight: bold;
   box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: -0.6px 0.6px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
 .add:hover, .add:focus {
-  transition: 1s;
   background-color: #98C379;
   color: #ddd;
-}
-
-.complete {
-  border: 2px solid blue;
-  background-color: #808080;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 15px;
-  margin: 1rem;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1);
-}
-.complete:hover, .complete:focus {
   transition: 1s;
-  background-color: #98C379;
-  color: #ddd;
-}
-
-.remove {
-  border: 2px solid red;
-  background-color: #651616;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 15px;
-  font-size: 16px;
-  margin: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1);
-}
-.remove:hover, .remove:focus {
-  transition: 1s;
-  background-color: #98C379;
-  color: #ddd;
 }
 
 .reset {
-  border: 2px solid purple;
-  background-color: #D3D3D3;
-  color: #333;
+  align-self: center;
+  width: 30%;
+  padding: 10px 15px;
   border: none;
   border-radius: 6px;
-  padding: 10px 15px;
-  font-size: 14px;
+  background-color: #a8471d;
+  color: #ddd;
+  font-size: 1.8rem;
   font-weight: bold;
   box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: -0.6px 0.6px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
 .reset:hover, .reset:focus {
-  transition: 1s;
   background-color: #98C379;
   color: #ddd;
+  transition: 1s;
+}
+
+.complete {
+  padding: 10px 15px;
+  margin: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #7E7E7E;
+  color: #ddd;
+  font-size: 1.8rem;
+  font-weight: bold;
+  box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: -0.6px 0.6px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.complete:hover, .complete:focus {
+  background-color: #98C379;
+  color: #ddd;
+  transition: 1s;
+}
+
+.remove {
+  margin: 1rem;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4c1717;
+  color: #ddd;
+  font-size: 1.8rem;
+  font-weight: bold;
+  box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: -0.6px 0.6px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.remove:hover, .remove:focus {
+  background-color: #98C379;
+  color: #ddd;
+  transition: 1s;
 }
 
 .contentPage .wrapper {
   flex-direction: column;
   align-items: center;
   border-radius: 15px;
-  margin-bottom: 5rem;
 }
-.contentPage .wrapper h2 {
-  background-color: #606738;
-  text-shadow: -6px 5px 2px rgba(0, 0, 0, 0.5);
-  color: #ddd;
+.contentPage .wrapper .h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100vw;
-  height: 63vh;
+  height: 55vh;
+  margin-bottom: 1vh;
+  text-shadow: -6px 5px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.3);
+  background-color: #606738;
+  color: #ddd;
   text-align: center;
-  padding: 28vh 4rem 4rem 4rem;
-  margin-top: 0;
+  background-image: url(../../assets/plant.png);
+  background-repeat: no-repeat;
+  background-position: -40% 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.contentPage .wrapper .h2 h2 {
+  padding: 0 2rem;
 }
 .contentPage .wrapper form {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  justify-content: center;
   align-self: center;
-  padding: 7rem;
-  margin-bottom: 2rem;
+  width: 100%;
+  height: 40vh;
+  box-shadow: -4px 4px 6px rgba(0, 0, 0, 0.3);
   border-radius: 15px;
-  border: 2px solid green;
+  border: 4px solid #606738;
 }
 .contentPage .wrapper form .plantInfo {
   display: flex;
   justify-content: space-evenly;
 }
-.contentPage .wrapper form input, .contentPage .wrapper form select, .contentPage .wrapper form .add {
-  margin: 2rem 0 2rem 0;
+.contentPage .wrapper form input, .contentPage .wrapper form select {
+  margin: 2rem 0 5rem 0;
+  border-radius: 10px;
+}
+.contentPage .wrapper form label {
+  text-shadow: -0.6px 0.6px rgba(0, 0, 0, 0.5);
 }
 .contentPage .resultDisplay {
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
   width: 100%;
+  margin-top: 3.5rem;
+  margin-bottom: 3rem;
 }
 .contentPage .resultDisplay .wrapper {
-  background-color: #98C379;
   padding: 3rem;
-  box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
+  background-color: #98C379;
+  box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.3);
 }
 .contentPage .resultDisplay .wrapper h3 {
   margin-top: 0;
@@ -409,25 +604,47 @@ select {
 .contentPage .resultDisplay .wrapper .progressBox {
   width: 40rem;
   height: 7rem;
-  border: 2px solid #606738;
-  background-color: #ddd;
-  border-radius: 10px;
   margin-top: 0.5rem;
   margin-bottom: 2.5rem;
+  border: 2px solid #606738;
+  border-radius: 10px;
+  background-color: #ddd;
   box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 .contentPage .resultDisplay .wrapper .progressBox .progress {
-  width: 60%;
   height: 100%;
-  border-radius: 10px;
   background-color: #005493;
+  border-radius: 8px;
+  -webkit-animation: loading 4s ease-in linear;
+          animation: loading 4s ease-in linear;
 }
 
-h1 {
+footer h4 {
+  margin: 1rem 0;
   text-align: center;
-  background-color: pink;
 }
-h1 .homeHeader {
+
+.homePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #F0E6D8;
+}
+.homePage h1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 80vh;
+  color: #a8471d;
+  background-color: #a9b388;
+  text-shadow: -5px 4px 2px rgba(244, 244, 244, 0.5);
+}
+.homePage h1 .homeHeader {
   display: block;
   display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=App.css.map */

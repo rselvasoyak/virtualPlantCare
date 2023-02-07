@@ -100,10 +100,10 @@ function App() {
   return (
     <>
       <main>
-        {/* <section className="homePage">
-        <h1> Leaf-by-Leaf <span className="homeHeader">Let's Become</span> <span className="homeHeader">Better Plant Parents</span></h1>
-        <button className="changePage">Let's Do It!</button>
-        </section> */}
+        <section className="homePage">
+            <h1> Leaf-by-Leaf <span className="homeHeader">Let's Become</span> <span className="homeHeader">Better Plant Parents</span></h1>
+            <button className="changePage">Let's Do It!</button>
+        </section>
         <section className="contentPage">
           <div className="wrapper">
             <div className="h2">
@@ -152,7 +152,7 @@ function App() {
                       <div className="progressBox"> 
                         <div className="progress" style={{"width": newWidth}}></div>
                       </div>
-                      <div>
+                      <div className="plantButtons">
                         <button 
                         className='complete'
                         disabled={waterCount === waterFrequency ? true : false} 
