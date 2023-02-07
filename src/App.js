@@ -1,5 +1,5 @@
 /* Modules */
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 /* Components  */
 import firebase from './firebase';
 import { getDatabase, ref, onValue, push, remove, update} from 'firebase/database';
@@ -18,12 +18,12 @@ function App() {
   }
 
   // Scroll down to the container
-  // const scrollDown = (containerRef) => {
-  //   containerRef.current.scrollIntoView({ 
-  //     behavior: "smooth", 
-  //     block: "start" 
-  //   });
-  // }
+  const scrollDown = (containerRef) => {
+    containerRef.current.scrollIntoView({ 
+      behavior: "smooth", 
+      block: "start" 
+    });
+  }
 
   // Store the state in Firebase 
   const handleSubmit = (e) => {
@@ -38,7 +38,7 @@ function App() {
       });
       setUserInput('')
       setWaterChoice("0");
-      // scrollDown(containerRef);
+      scrollDown(containerRef);
     } else {
       alert(`Please Choose How Frequently You Want To Water Your Plant`)
     }
@@ -87,15 +87,15 @@ function App() {
   }, [])
 
   // Scrolling down to the new plant 
-  // const containerRef = useRef(null);
-  // useEffect(() => {
-  //   if (containerRef.current !== null) {
-  //     containerRef.current.scrollIntoView({
-  //       behavior: "smooth",
-  //       block: "start"
-  //     });
-  //   }
-  // }, [plants]);
+  const containerRef = useRef(null);
+  useEffect(() => {
+    if (containerRef.current !== null) {
+      containerRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  }, [plants]);
   return (
     <>
       <main>
