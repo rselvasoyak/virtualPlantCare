@@ -1,11 +1,25 @@
 @use "../abstract/variables" as *;
-
-h1{
-  text-align: center;
-  background-color: pink;
-  .homeHeader{
-    display: block;
+.homePage {
+height: 100vh;
+  background-color: $beige;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1{
+    text-align: center;
+    background-color: $lightOlive;
+    text-shadow: -5px 4px 2px $lightTextShadow;
+    color: $apricot;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-  }
+    height: 60vh;
+    width: 100%;
+    .homeHeader{
+      display: block;
+      display: flex;
+      justify-content: center;
+    }
 }
+  }
