@@ -1,10 +1,13 @@
+import { Link } from 'react-router-dom';
+// import { Link } from 'react-scroll';
 const Form = ({
     waterChoice,
     handleWaterChoice,
     handleSubmit,
     handleResetWeek,
     userInput,
-    handleInputChange 
+    handleInputChange,
+    plants
     }
 ) => {
     return (
@@ -26,7 +29,7 @@ const Form = ({
                     id="wateringFreq"
                     value = { waterChoice }
                     onChange={ handleWaterChoice }
-                    defaultValue = "2"
+                    // defaultValue = "2"
                     required>
                       <option value ="0" disabled> Watering Frequency </option>
                       <option value="1">1 time per week</option>
@@ -38,6 +41,9 @@ const Form = ({
                 <button className="add" 
                 onClick={ handleSubmit }> Add </button>
                 <button className="reset" onClick={ handleResetWeek }> Reset The Week </button>
+                <Link to="/" className="backToHome">
+                    Back To Home Page 
+                </Link>
             </form>
     )
 }

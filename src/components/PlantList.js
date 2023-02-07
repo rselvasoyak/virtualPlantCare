@@ -1,18 +1,31 @@
+import { useEffect, useRef } from 'react';
+
+// import Element from "react-scroll";
 const PlantList = ({ 
         plants, 
         handleRemovePlant,
         handleCompletedButton
      }) => {
+      
+  // Scrolling down to the new plant 
+    const containerRef = useRef(null);
+    useEffect(() => {
+    if (containerRef.current !== null) { 
+      containerRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  }, [plants]);
     return(
-        <ul>
-            <li>
+        <>
             {
                   plants.map((plant) => {
                     const { name , key, waterFrequency, waterCount } = plant;
                     const newWidth = `${(waterCount/waterFrequency) * 100}%`
                     return(
-                      <section className="resultDisplay">
-                        <div className="wrapper" key={key}>
+                      <li className="resultDisplay" ref={containerRef} key={key}>
+                        <div className="wrapper">
                           <h3>{name}</h3>
                           <div className="progressBox"> 
                             <div className="progress" style={{"width": newWidth}}></div>
@@ -30,12 +43,12 @@ const PlantList = ({
                             }}> Remove </button>
                           </div>
                         </div>
-                      </section>
+                      </li>
+                      // </Element>
                     )
                   })
                 }
-            </li>
-        </ul>
+        </>
     )
 }
 
