@@ -1,122 +1,24 @@
 /* Modules */
-import { useState, useEffect, useRef } from 'react';
-/* Components  */
-import firebase from './firebase';
-import { getDatabase, ref, onValue, push, remove, update} from 'firebase/database';
+// import { useState, useEffect, useRef } from 'react';
+// /* Components  */
+// import firebase from './firebase';
+// import { getDatabase, ref, onValue, push, remove, update} from 'firebase/database';
 import { Routes, Route } from 'react-router-dom';
-import HomePage from './components/HomePage';
-import ContentPage from './components/ContentPage';
-import Footer from './components/Footer';
+import HomePage from './Components/HomePage';
+import ContentPage from './Components/ContentPage';
+import Footer from './Components/Footer';
 /* Assets/Styling */
 import './App.scss';
 
 function App() {
-  // State
-  const [plants , setPlants] = useState([]);
-  const [userInput, setUserInput] = useState("");
-  const [waterChoice, setWaterChoice] = useState("0");
 
-  // Plant Name Input Change
-  const handleInputChange = (e) => {
-      setUserInput(e.target.value);
-  }
-
-  // Scroll down to the container
-  const scrollDown = (containerRef) => {
-    containerRef.current.scrollIntoView({ 
-      behavior: "smooth", 
-      block: "start" 
-    });
-  }
-
-  // Store the state in Firebase 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (waterChoice !== "0") {
-      const database = getDatabase(firebase);
-      const dbRef = ref(database);
-      push(dbRef, {
-        name: userInput,
-        waterFrequency: parseInt(waterChoice), 
-        waterCount: 0,
-      });
-      setUserInput('')
-      setWaterChoice("0");
-      scrollDown(containerRef);
-    } else {
-      alert(`Please Choose How Frequently You Want To Water Your Plant`)
-    }
-  }
-  
-  // Water Frequency Change - Conditions 
-  const handleWaterChoice = (waterFreq) => {
-    setWaterChoice(waterFreq.target.value);
-  } 
-  
-  // Deleting the Plant
-  const handleRemovePlant = (plantKey) => {
-    const database = getDatabase(firebase);
-    const dbRef = ref(database, `${plantKey}`);
-    remove(dbRef);
-  }
-
-  // Completed Button
-  const handleCompletedButton = (plant) => {
-    const { waterCount, key } = plant;
-    const database = getDatabase(firebase);
-    const dbRef = ref(database, `/${key}`);
-    update( dbRef, {
-      ...plant, 
-      waterCount: waterCount + 1
-    })
-  }
-  // Reset the Week Button 
-   const handleResetWeek = () => {
-    console.log("Resetting")
-   }
-
-  useEffect(() => {
-      const database = getDatabase(firebase);
-      const dbRef = ref(database);
-
-    onValue ( dbRef , (response) => {
-      const plants = response.val();
-      const newPlants = []; 
-
-      for (let key in plants) {
-        newPlants.push({key: key, ...plants[key]})
-      }
-      setPlants(newPlants);
-    })
-  }, [])
-
-  // Scrolling down to the new plant 
-  const containerRef = useRef(null);
-  useEffect(() => {
-    if (containerRef.current !== null) {
-      containerRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }
-  }, [plants]);
 
   return (
       <main>
         <Routes>
           <Route path="/" element={ <HomePage /> }/>
           <Route path="/contentPage" element={ 
-          <ContentPage 
-            handleInputChange={handleInputChange}
-            handleResetWeek={handleResetWeek}
-            handleSubmit={handleSubmit}
-            handleWaterChoice={handleWaterChoice}
-            userInput={userInput}
-            waterChoice={waterChoice}
-            plants={plants}
-            handleRemovePlant={handleRemovePlant}
-            handleCompletedButton={handleCompletedButton}
-          /> }/>
+          <ContentPage/> }/>
         </Routes>
         <Footer />
       </main>
