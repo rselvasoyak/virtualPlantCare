@@ -1,0 +1,19 @@
+@use "../abstract/variables" as *;
+
+@keyframes loading {
+   0%{
+      width: 0%;
+    }
+    25%{
+        width: 40%;
+    }
+    50%{
+        width: 65%;
+    }
+    75%{
+        width: 80%;
+    }
+    100%{
+        width: 100%;
+    }
+}

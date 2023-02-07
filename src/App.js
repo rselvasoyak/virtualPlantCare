@@ -96,15 +96,19 @@ function App() {
       });
     }
   }, [plants]);
+
   return (
     <>
       <main>
         {/* <section className="homePage">
         <h1> Leaf-by-Leaf <span className="homeHeader">Let's Become</span> <span className="homeHeader">Better Plant Parents</span></h1>
+        <button className="changePage">Let's Do It!</button>
         </section> */}
         <section className="contentPage">
           <div className="wrapper">
-            <h2>let's take care of them</h2>
+            <div className="h2">
+              <h2>let's take care of them</h2>
+            </div>
             <form>
               <div className="plantInfo">
                 <div className="plantName">
@@ -134,9 +138,9 @@ function App() {
               </div>
                 <button className="add" 
                 onClick={ handleSubmit }> Add </button>
+                <button className="reset" onClick={ handleResetWeek }> Reset The Week </button>
             </form>
 
-            <button className="reset" onClick={ handleResetWeek }> Reset The Week </button>
             {
               plants.map((plant) => {
                 const { name , key, waterFrequency, waterCount } = plant;
