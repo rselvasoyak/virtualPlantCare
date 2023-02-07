@@ -3,9 +3,9 @@ import { useState, useEffect, useRef } from 'react';
 /* Components  */
 import firebase from './firebase';
 import { getDatabase, ref, onValue, push, remove, update} from 'firebase/database';
+import { Routes, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
-import Form from './components/Form';
-import PlantList from './components/PlantList';
+import ContentPage from './components/ContentPage';
 import Footer from './components/Footer';
 /* Assets/Styling */
 import './App.scss';
@@ -102,33 +102,24 @@ function App() {
   }, [plants]);
 
   return (
-    <>
       <main>
-      <HomePage />
-        <section className="contentPage">
-          <div className="wrapper">
-            <div className="h2">
-              <h2>let's take care of them</h2>
-            </div>
-          <Form 
-          waterChoice = { waterChoice}
-          handleWaterChoice = { handleWaterChoice }
-          handleSubmit = { handleSubmit }
-          handleResetWeek = { handleResetWeek }
-          userInput = { userInput }
-          handleInputChange = { handleInputChange }
-          />
-          <PlantList 
-            plants={plants} 
-            handleRemovePlant={handleRemovePlant} 
-            handleCompletedButton={handleCompletedButton} 
-            handleResetWeek={handleResetWeek}  
-          />
-          </div> {/* End of wrapper */}
-        </section> {/* End of Content Page */}
+        <Routes>
+          <Route path="/" element={ <HomePage /> }/>
+          <Route path="/contentPage" element={ 
+          <ContentPage 
+            handleInputChange={handleInputChange}
+            handleResetWeek={handleResetWeek}
+            handleSubmit={handleSubmit}
+            handleWaterChoice={handleWaterChoice}
+            userInput={userInput}
+            waterChoice={waterChoice}
+            plants={plants}
+            handleRemovePlant={handleRemovePlant}
+            handleCompletedButton={handleCompletedButton}
+          /> }/>
+        </Routes>
+        <Footer />
       </main>
-      <Footer />
-    </>
   );
 }
 
