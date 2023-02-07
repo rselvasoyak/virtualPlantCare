@@ -1,0 +1,25 @@
+@use "../abstract/variables" as *;
+.homePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: $beige;
+  h1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 80vh;
+    color: $apricot;
+    background-color: $lightOlive;
+    text-shadow: -5px 4px 2px $lightTextShadow;
+    .homeHeader{
+      display: block;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
