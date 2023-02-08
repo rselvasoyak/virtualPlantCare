@@ -6,8 +6,7 @@ const Form = ({
     handleSubmit,
     handleResetWeek,
     userInput,
-    handleInputChange,
-    plants
+    handleInputChange
     }
 ) => {
     return (

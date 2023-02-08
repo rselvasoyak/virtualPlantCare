@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect/* , useRef */ } from 'react';
 
 // import Element from "react-scroll";
 const PlantList = ({ 
@@ -8,15 +8,15 @@ const PlantList = ({
      }) => {
       
   // Scrolling down to the new plant 
-    const containerRef = useRef(null);
-    useEffect(() => {
-    if (containerRef.current !== null) { 
-      containerRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }
-  }, [plants]);
+  //   const containerRef = useRef(null);
+  //   useEffect(() => {
+  //   if (containerRef.current !== null) { 
+  //     containerRef.current.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "start"
+  //     });
+  //   }
+  // }, [plants]);
     return(
         <>
             {
@@ -24,7 +24,7 @@ const PlantList = ({
                     const { name , key, waterFrequency, waterCount } = plant;
                     const newWidth = `${(waterCount/waterFrequency) * 100}%`
                     return(
-                      <li className="resultDisplay" ref={containerRef} key={key}>
+                      <li className="resultDisplay" /* ref={containerRef} */ key={key}>
                         <div className="wrapper">
                           <h3>{name}</h3>
                           <div className="progressBox"> 
