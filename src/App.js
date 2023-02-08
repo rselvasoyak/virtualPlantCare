@@ -1,8 +1,4 @@
 /* Modules */
-// import { useState, useEffect, useRef } from 'react';
-// /* Components  */
-// import firebase from './firebase';
-// import { getDatabase, ref, onValue, push, remove, update} from 'firebase/database';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './Components/HomePage';
 import ContentPage from './Components/ContentPage';
