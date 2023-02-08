@@ -11,8 +11,6 @@ import Footer from './Components/Footer';
 import './App.scss';
 
 function App() {
-
-
   return (
       <main>
         <Routes>
