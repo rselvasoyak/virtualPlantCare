@@ -1,5 +1,6 @@
 /* Modules */
 import { Routes, Route } from 'react-router-dom';
+/* Components */
 import HomePage from './components/HomePage';
 import ContentPage from './components/ContentPage';
 import Footer from './components/Footer';

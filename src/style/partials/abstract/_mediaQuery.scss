@@ -4,19 +4,30 @@
     .contentPage{
         .h2{
             background-position: left;
+            height: 54vh;
         }
         form {
+            height: 30vh;
             .plantInfo{
                 display: flex;
-                flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                margin-bottom: 2rem;
+            }
+            label{
+                font-size: 2.5rem;
             }
             #plantName, #wateringFreq{
-                margin: 1.5rem;
+                margin: 0 0 0 .3rem;
+                width: 50%;
             }
             .add{
-                margin-top: 2rem;
+                margin-top: 3rem;
+            }
+        }
+        .resultDisplay{
+            .remove{
+                margin-left: 1rem;
             }
         }
     }
@@ -24,11 +35,28 @@
 
 
 /* Portrait tablet and small desktops */
-@media (max-width: 940px) {
+@media (max-width: 945px) {
+    .contentPage{
+        form{
+            .plantName, .plantCare {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 50rem;
+               label{
+                 font-size: 2.2rem;
+                 margin-bottom: 1.2rem;
+               }
+               input, select, option{
+                font-size: 2rem;
+               };
+            }
+        }
+    }
 }
 
 /* Landscape phone to portrait tablet */
-@media (max-width: 768px) {
+@media (max-width: 810px) {
     .homePage{
         h1{
             font-size: 8rem;
@@ -40,20 +68,24 @@
         }
         form{
             label{
-                font-size: 2rem;
+                font-size: 1.8rem;
                 padding-left: 1rem;
                 margin-right: 1rem;
                 }
-            input{
-                font-size: 2rem;
-            }
-            select, option {
-                font-size: 2rem;
+            input, select, option {
+                font-size: 1.6rem;
             }
         }
         // Buttons
-        .changePage, .add, .remove, .complete, .reset{
+        .changePage, .add, .remove, .complete, .backToHome{
+            width: 50%;
             font-size: 1.6rem;
+            padding: 1rem 3rem;
+            text-align: center;
+        }
+
+        .resultDisplay{
+            width: 40vw;
         }
     }
 }
@@ -84,13 +116,14 @@
             select, option {
                 font-size: 1.6rem;
             }
-            // Buttons
-            .add, .reset {
+            // // Buttons
+            .add, .backToHome {
                 width: 50%;
                 font-size: 1.6rem;
             }
         }
         .resultDisplay{
+            width: 30vw;
             .wrapper{
                 .progressBox{
                     width: 10rem;

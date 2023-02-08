@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-// import { Link } from 'react-scroll';
+
 const Form = ({
     waterChoice,
     handleWaterChoice,
@@ -15,8 +15,8 @@ const Form = ({
                 <div className="plantName">
                   <label htmlFor="plantName"> Plant Name </label>
                   <input 
-                  type="text"
                   id="plantName"
+                  type="text"
                   onChange={ handleInputChange }
                   value={ userInput }
                   />
@@ -24,11 +24,10 @@ const Form = ({
                 <div className="plantCare">
                     <label htmlFor="wateringFreq">Watering Frequency</label>
                     <select 
-                    type="dropdown"
                     id="wateringFreq"
-                    value = { waterChoice }
+                    type="dropdown"
                     onChange={ handleWaterChoice }
-                    // defaultValue = "2"
+                    value = { waterChoice }
                     required>
                       <option value ="0" disabled> Watering Frequency </option>
                       <option value="1">1 time per week</option>
@@ -39,7 +38,6 @@ const Form = ({
               </div>
                 <button className="add" 
                 onClick={ handleSubmit }> Add </button>
-                <button className="reset" onClick={ handleResetWeek }> Reset The Week </button>
                 <Link to="/" className="backToHome">
                     Back To Home Page 
                 </Link>
