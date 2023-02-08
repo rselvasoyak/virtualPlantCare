@@ -17,6 +17,7 @@ const PlantList = ({
   //     });
   //   }
   // }, [plants]);
+  
     return(
         <>
             {
