@@ -1,8 +1,8 @@
 /* Modules */
 import { Routes, Route } from 'react-router-dom';
-import HomePage from './Components/HomePage';
-import ContentPage from './Components/ContentPage';
-import Footer from './Components/Footer';
+import HomePage from './components/HomePage';
+import ContentPage from './components/ContentPage';
+import Footer from './components/Footer';
 /* Assets/Styling */
 import './App.scss';
 
