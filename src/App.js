@@ -6,7 +6,6 @@ import Footer from './Components/Footer';
 /* Assets/Styling */
 import './App.scss';
 
-
 function App() {
   return (
       <main>
