@@ -1,23 +1,22 @@
-// import { useEffect/* , useRef */ } from 'react';
+import { useEffect } from 'react';
+import { animateScroll as scroll } from 'react-scroll';
 
 // import Element from "react-scroll";
 const PlantList = ({ 
         plants, 
         handleRemovePlant,
-        handleCompletedButton
+        handleCompletedButton,
+        containerRef
      }) => {
       
-  // Scrolling down to the new plant 
-  //   const containerRef = useRef(null);
-  //   useEffect(() => {
-  //   if (containerRef.current !== null) { 
-  //     containerRef.current.scrollIntoView({
-  //       behavior: "smooth",
-  //       block: "start"
-  //     });
-  //   }
-  // }, [plants]);
-  
+  useEffect(() => {
+    if (containerRef.current !== null) { 
+      scroll.scrollTo(containerRef.current.offsetTop, {
+        duration: 1500,
+        smooth: true,
+      });
+    }
+  }, [plants, containerRef]);
     return(
         <>
             {
@@ -25,7 +24,7 @@ const PlantList = ({
                     const { name , key, waterFrequency, waterCount } = plant;
                     const newWidth = `${(waterCount/waterFrequency) * 100}%`
                     return(
-                      <li className="resultDisplay" /* ref={containerRef} */ key={key}>
+                      <li className="resultDisplay" ref={containerRef} key={key}>
                         <div className="wrapper">
                           <h3>{name}</h3>
                           <div className="progressBox"> 

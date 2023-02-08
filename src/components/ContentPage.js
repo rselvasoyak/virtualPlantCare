@@ -1,11 +1,11 @@
-import { useState, useEffect, /* useRef */ } from 'react';
+import { useState, useEffect, useRef } from 'react';
 /* Components  */
 import firebase from '../firebase';
 import { getDatabase, ref, onValue, push, remove, update} from 'firebase/database';
 import Form from "./Form";
 import PlantList from "./PlantList";
 
-const ContentPage = (/* props */) => {
+const ContentPage = () => {
       // State
   const [plants , setPlants] = useState([]);
   const [userInput, setUserInput] = useState("");
@@ -15,7 +15,8 @@ const ContentPage = (/* props */) => {
   const handleInputChange = (e) => {
       setUserInput(e.target.value);
   }
-
+  
+  const containerRef = useRef(null);
   // Store the state in Firebase 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,7 +30,7 @@ const ContentPage = (/* props */) => {
       });
       setUserInput('')
       setWaterChoice("0");
-    //   scrollDown(containerRef);
+      // scrollDown(containerRef);
     } else {
       alert(`Please Choose How Frequently You Want To Water Your Plant`)
     }
@@ -98,6 +99,7 @@ const ContentPage = (/* props */) => {
                     handleRemovePlant={handleRemovePlant}
                     handleCompletedButton={handleCompletedButton}
                     handleResetWeek={handleResetWeek}
+                    containerRef = {containerRef}
                     />
                 </ul>
             </div>
