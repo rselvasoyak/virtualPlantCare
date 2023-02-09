@@ -1,22 +1,12 @@
-import { useEffect } from 'react';
-import { animateScroll as scroll } from 'react-scroll';
-
 
 const PlantList = ({ 
         handleCompletedButton,
         handleRemovePlant,
+        handleReset,
         containerRef,
         plants
      }) => {
-      
-  useEffect(() => {
-    if (containerRef.current !== null) { 
-      scroll.scrollTo(containerRef.current.offsetTop, {
-        duration: 1500,
-        smooth: true,
-      });
-    }
-  }, [plants, containerRef]);
+
     return(
         <>
             {
@@ -24,17 +14,25 @@ const PlantList = ({
                 const { key, name, waterFrequency, waterCount } = plant;
                 const newWidth = `${(waterCount/waterFrequency) * 100}%`
                 return(
-                  <li className="resultDisplay" ref={containerRef} key={key}>
+                  <li 
+                    className="resultDisplay" 
+                    ref={containerRef} 
+                    key={key}
+                  >
                     <div className="wrapper">
                       <h3>{name}</h3>
                       <div className="progressBox"> 
-                        <div className="progress" style={{"width": newWidth}}></div>
+                        <div 
+                         className="progress" 
+                          style={{"width": newWidth}}
+                        >
+                        </div>
                       </div>
                       <div className="plantButtons">
                         <button 
-                        className='complete'
-                        disabled={waterCount === waterFrequency ? true : false} 
-                        onClick = { () => handleCompletedButton(plant) }
+                          className='complete'
+                          disabled={waterCount === waterFrequency ? true : false} 
+                          onClick = { () => handleCompletedButton(plant) }
                         >
                           Completed
                         </button>
@@ -43,7 +41,16 @@ const PlantList = ({
                           className="remove" 
                           onClick = { () => {
                             handleRemovePlant(key)
-                          }}> Remove 
+                          }}
+                        > 
+                          Remove 
+                        </button>
+
+                        <button
+                          className="reset" 
+                          onClick = {() => handleReset(plant)}
+                        >
+                          Reset
                         </button>
                       </div> {/* Plant Button div Ending */}
                     </div>{/* Wrapper Ending */}

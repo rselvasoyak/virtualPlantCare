@@ -1,6 +1,13 @@
 @use "../abstract/variables" as *;
+@media (max-width: 1200px) {
+    .resultDisplay{
+        .complete{
+            margin-right: 0;
+        }
+    }
+}
 
-@media (max-width: 1010px) {
+@media (max-width: 1040px) {
     .contentPage{
         .h2{
             background-position: left;
@@ -15,12 +22,18 @@
                 margin-bottom: 2rem;
             }
             label{
-                font-size: 2.5rem;
+                font-size: 2.4rem;
             }
-            #plantName, #wateringFreq{
-                margin: 0 0 0 .3rem;
-                width: 50%;
+            #plantName{
+                margin: 0;
+                font-size: 1.9rem;
+                flex-basis: 45%;
             }
+             #wateringFreq {
+                margin: 0;
+                font-size: 1.9rem;
+                flex-basis: 45%;
+             }
             .add{
                 margin-top: 3rem;
             }
@@ -67,6 +80,9 @@
             font-size: 7rem;
         }
         form{
+            .plantInfo {
+                flex-direction: column;
+            }
             label{
                 font-size: 1.8rem;
                 padding-left: 1rem;
@@ -74,22 +90,48 @@
                 }
             input, select, option {
                 font-size: 1.6rem;
+                width: 80%;
+            }
+            .add, .backToHome {
+                margin-top: .7rem;
+                min-width: 16rem;
             }
         }
         // Buttons
-        .changePage, .add, .remove, .complete, .backToHome{
+        .changePage, .remove, .complete{
             width: 50%;
             font-size: 1.6rem;
             padding: 1rem 3rem;
             text-align: center;
         }
-
         .resultDisplay{
             width: 40vw;
         }
     }
 }
 
+@media (max-width: 700px) {
+    .plantButtons{
+        button{
+            width: 16rem;
+        }
+        .complete{
+            margin-right: 0;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .plantButtons{
+        flex-direction: column;
+        .complete, .remove, .reset{
+            width: 140px;
+        }
+        .complete {
+            margin-bottom: 0;
+        }
+    }
+}
 /* Landscape phones and down */
 @media (max-width: 480px) {
     .homePage{

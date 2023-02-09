@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
 
 const Form = ({
-    waterChoice,
-    handleWaterChoice,
+    handleInputChange,
     handleSubmit,
-    handleResetWeek,
+    handleWaterChoice,
     userInput,
-    handleInputChange
+    waterChoice
     }
 ) => {
     return (
@@ -17,8 +16,8 @@ const Form = ({
                   <input 
                   id="plantName"
                   type="text"
-                  onChange={ handleInputChange }
-                  value={ userInput }
+                  onChange={handleInputChange}
+                  value={userInput}
                   />
                 </div>
                 <div className="plantCare">
@@ -26,8 +25,8 @@ const Form = ({
                     <select 
                     id="wateringFreq"
                     type="dropdown"
-                    onChange={ handleWaterChoice }
-                    value = { waterChoice }
+                    onChange={handleWaterChoice}
+                    value = {waterChoice}
                     required>
                       <option value ="0" disabled> Watering Frequency </option>
                       <option value="1">1 time per week</option>

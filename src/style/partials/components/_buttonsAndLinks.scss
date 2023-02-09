@@ -16,7 +16,7 @@
         cursor: pointer;
             &:hover, 
             &:focus {
-                background-color: $lightGreen;
+                background-color: $apricot;
                 color: $white;
                 transition: 1s;
             }
@@ -24,7 +24,7 @@
 
     .add{
         align-self: center;
-        width: 30%;
+        width: 25%;
         padding: 8px 14px;
         margin-bottom: 1rem;
         border: none;
@@ -46,7 +46,7 @@
 
     .reset {
         align-self: center;
-        width: 30%;
+        width: 25rem;
         padding: 10px 15px;
         border: none;
         border-radius: 6px;
@@ -111,8 +111,8 @@
         display: flex;
         justify-content: center;
         align-self: center;
-        width: 30%;
         margin-bottom: 1rem;
+        width: 25%;
         padding: 8px 14px;
         border: none;
         border-radius: 7px;
@@ -121,13 +121,14 @@
         font-size: 1.8rem;
         font-weight: bold;
         text-decoration: none;
+        text-align: center;
         box-shadow: -2px 2px 2px $lightTextShadow;
         text-shadow: -0.6px 0.6px  $textShadow;
         cursor: pointer;
             &:hover, 
             &:focus {
-                background-color: $lightGreen;
-                color: $white;
+                background-color: $yellow;
+                color: $textShadow;
                 transition: 1s;
             }
     }
