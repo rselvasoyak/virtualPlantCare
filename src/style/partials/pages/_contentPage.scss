@@ -12,6 +12,8 @@
       width: 100vw;
       height: 50vh;
       margin-bottom: 2vh;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
       text-shadow: -6px 5px 2px $textShadow;
       box-shadow: -1px 2px 4px $boxShadow;
       background-color: $darkGreen;
@@ -28,6 +30,7 @@
     form{
       position: sticky;
       top: 2vh;
+      z-index: 10;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -39,6 +42,14 @@
       border: 4px solid $darkGreen;
       background-color: $beige;
       backdrop-filter: blur(4px);
+      h4{
+        margin: 0 0 1rem 0;
+        color: $waterBlue;
+        font-style: italic;
+        text-align: center;
+        text-shadow: -1px 1px 2px $textShadow;
+        text-decoration: underline .3rem $boxShadow;
+      }
       .plantInfo{
         display: flex;
         justify-content: space-evenly;
@@ -73,11 +84,16 @@
         margin-top: 0;
         margin-bottom: 1.5rem;
       }
+      h4{
+        margin: .8rem 0 2rem 0;
+        color: $waterBlue;
+        font-size: 1.8rem;
+        font-weight: 800;
+      }
       .progressBox{
         width: 65%;
         height: 7rem;
         margin-top: .5rem;
-        margin-bottom: 2.5rem;
         border: 2px solid $darkGreen;
         border-radius: 10px;
         background-color: $white;
@@ -86,7 +102,6 @@
           height: 100%;
           background-color: $waterBlue;
           border-radius: 8px;
-          animation: loading 4s ease-in linear; 
         }
       }
       .plantButtons {

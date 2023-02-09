@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-/* Components  */
 import firebase from '../firebase';
 import { getDatabase, ref, onValue, push, remove, update} from 'firebase/database';
 import { animateScroll as scroll } from 'react-scroll';
@@ -11,7 +10,6 @@ const ContentPage = () => {
   const [plants , setPlants] = useState([]);
   const [userInput, setUserInput] = useState("");
   const [waterChoice, setWaterChoice] = useState("0");
-  // const [waterCount, setWaterCount] = useState(0);
 
   // Functions in Event Order 
     // Plant name input change when user inputs the plant name 
@@ -60,15 +58,29 @@ const ContentPage = () => {
 
     // Completed Button
     const handleCompletedButton = (plant) => {
-      const { waterCount, key } = plant;
+      const {waterCount, key, waterFrequency} = plant;
       const database = getDatabase(firebase);
       const dbRef = ref(database, `/${key}`);
-      update( dbRef, {
+      update(dbRef, {
         ...plant, 
         waterCount: waterCount + 1
       })
+      if (waterCount === waterFrequency) {
+        alert("Your Water Is No Longer Thirsty");
+      }
     }
     
+    // Resetting the Water progress bar 
+    const handleReset = (plant) => {
+      const {key} = plant;
+      const database = getDatabase(firebase);
+      const dbRef = ref(database, `/${key}`);
+      update(dbRef, {
+        ...plant, 
+        waterCount: 0,
+      })
+    }
+
     // Deleting the Plant from Firebase and triggering rerendering through state
     const handleRemovePlant = (plantKey) => {
       const database = getDatabase(firebase);
@@ -76,16 +88,6 @@ const ContentPage = () => {
       remove(dbRef);
     }
 
-    // Resetting the Water progress bar 
-    const handleReset = (plant) => {
-      const { key } = plant;
-      const database = getDatabase(firebase);
-      const dbRef = ref(database, `/${key}`);
-      update( dbRef, {
-        ...plant, 
-        waterCount: 0,
-      })
-    }
 
     useEffect(() => {
         const database = getDatabase(firebase);

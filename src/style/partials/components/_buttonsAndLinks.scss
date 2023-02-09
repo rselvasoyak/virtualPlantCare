@@ -13,12 +13,14 @@
         font-weight: bold;
         box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1);
         text-shadow: -0.6px 0.6px  $textShadow;
+        transition: all 0.3s ease-in-out;
         cursor: pointer;
             &:hover, 
             &:focus {
                 background-color: $apricot;
                 color: $white;
                 transition: 1s;
+                transform: scale(1.05);
             }
     }
 
@@ -35,12 +37,58 @@
         font-weight: bold;
         box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1);
         text-shadow: -0.6px 0.6px  $textShadow;
+        transition: all 0.3s ease-in-out;
         cursor: pointer;
             &:hover, 
             &:focus {
                 background-color: $lightGreen;
                 color: $white;
                 transition: 1s;
+                transform: scale(1.05);
+            }
+    }
+
+    .complete{
+        padding: 10px 15px;
+        margin: 1rem 0 1rem 1rem;
+        border: none;
+        border-radius: 5px;
+        background-color: $medGrey;
+        color: $white;
+        font-size: 1.8rem;
+        font-weight: bold;
+        box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1);
+        text-shadow: -0.6px 0.6px  $textShadow;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+            &:hover, 
+            &:focus {
+                background-color: $apricot;
+                color: $white;
+                transition: 1s;
+                transform: scale(1.05);
+            }
+    }
+    
+    .remove {
+        margin: 1rem;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: $bordeaux;
+        color: $white;
+        font-size: 1.8rem;
+        font-weight: bold;
+        box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1);
+        text-shadow: -0.6px 0.6px  $textShadow;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+            &:hover, 
+            &:focus {
+                background-color: $medGrey;
+                color: $white;
+                transition: 1s;
+                transform: scale(1.05);
             }
     }
 
@@ -56,53 +104,15 @@
         font-weight: bold;
         box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1);
         text-shadow: -0.6px 0.6px  $textShadow;
+        transition: all 0.3s ease-in-out;
         cursor: pointer;
             &:hover, 
             &:focus {
-                background-color: $lightGreen;
+                background-color: $bordeaux;
                 color: $white;
                 transition: 1s;
+                transform: scale(1.05);
         }
-    }
-
-    .complete{
-        padding: 10px 15px;
-        margin: 1rem;
-        border: none;
-        border-radius: 5px;
-        background-color: $medGrey;
-        color: $white;
-        font-size: 1.8rem;
-        font-weight: bold;
-        box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1);
-        text-shadow: -0.6px 0.6px  $textShadow;
-        cursor: pointer;
-            &:hover, 
-            &:focus {
-                background-color: $lightGreen;
-                color: $white;
-                transition: 1s;
-            }
-    }
-
-    .remove {
-        margin: 1rem;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 5px;
-        background-color: $bordeaux;
-        color: $white;
-        font-size: 1.8rem;
-        font-weight: bold;
-        box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1);
-        text-shadow: -0.6px 0.6px  $textShadow;
-        cursor: pointer;
-            &:hover, 
-            &:focus {
-                background-color: $lightGreen;
-                color: $white;
-                transition: 1s;
-            }
     }
 
 
@@ -130,5 +140,6 @@
                 background-color: $yellow;
                 color: $textShadow;
                 transition: 1s;
+                transform: scale(1.05);
             }
     }

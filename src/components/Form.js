@@ -10,6 +10,7 @@ const Form = ({
 ) => {
     return (
            <form>
+              <h4> NAME YOUR PLANT AND CHOOSE HOW THIRSTY IT IS </h4>
               <div className="plantInfo">
                 <div className="plantName">
                   <label htmlFor="plantName"> Plant Name </label>
@@ -36,7 +37,7 @@ const Form = ({
                 </div>{/* plant care ending */}
               </div>
                 <button className="add" 
-                onClick={ handleSubmit }> Add </button>
+                onClick={handleSubmit}> Add </button>
                 <Link to="/" className="backToHome">
                     Back To Home Page 
                 </Link>

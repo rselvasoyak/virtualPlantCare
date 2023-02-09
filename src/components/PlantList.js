@@ -11,8 +11,9 @@ const PlantList = ({
         <>
             {
               plants.map((plant) => {
-                const { key, name, waterFrequency, waterCount } = plant;
-                const newWidth = `${(waterCount/waterFrequency) * 100}%`
+                const {key, name, waterFrequency, waterCount} = plant;
+                const newWidth = `${(waterCount/waterFrequency) * 100}%`;
+                const backgroundColor = waterCount === waterFrequency ? "#315e11" : "";
                 return(
                   <li 
                     className="resultDisplay" 
@@ -23,11 +24,17 @@ const PlantList = ({
                       <h3>{name}</h3>
                       <div className="progressBox"> 
                         <div 
-                         className="progress" 
-                          style={{"width": newWidth}}
+                          className= "progress"
+                          style={
+                            {
+                              width: newWidth, 
+                              "background-color": backgroundColor
+                            }
+                          }
                         >
                         </div>
                       </div>
+                      <h4>{`${waterCount}/${waterFrequency}`} WATERED</h4>
                       <div className="plantButtons">
                         <button 
                           className='complete'

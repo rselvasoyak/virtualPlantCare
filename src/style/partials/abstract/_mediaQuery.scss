@@ -19,7 +19,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin-bottom: 2rem;
+                margin:3rem 0 2rem 0;
             }
             label{
                 font-size: 2.4rem;
@@ -29,13 +29,13 @@
                 font-size: 1.9rem;
                 flex-basis: 45%;
             }
-             #wateringFreq {
+            #wateringFreq {
                 margin: 0;
                 font-size: 1.9rem;
                 flex-basis: 45%;
-             }
+            }
             .add{
-                margin-top: 3rem;
+                margin-top: 2rem;
             }
         }
         .resultDisplay{
@@ -82,6 +82,7 @@
         form{
             .plantInfo {
                 flex-direction: column;
+                margin: 0;
             }
             label{
                 font-size: 1.8rem;
@@ -92,8 +93,12 @@
                 font-size: 1.6rem;
                 width: 80%;
             }
-            .add, .backToHome {
+            .add {
                 margin-top: .7rem;
+                min-width: 16rem;
+            }
+            .backToHome {
+                margin: 0;
                 min-width: 16rem;
             }
         }
@@ -147,21 +152,23 @@
             font-size: 6rem;
         }
         form{
+            h4{
+                font-size: 1.6rem;
+                margin: 1rem 0;
+            }
             label{
                 font-size: 1.6rem;
                 padding-left: 1rem;
                 margin-right: 1rem;
                 }
-            input{
+            input, select, option {
                 font-size: 1.6rem;
-            }
-            select, option {
-                font-size: 1.6rem;
+                width: 52%;
             }
             // // Buttons
             .add, .backToHome {
                 width: 50%;
-                font-size: 1.6rem;
+                font-size: 1.5rem;
             }
         }
         .resultDisplay{
@@ -177,10 +184,15 @@
             }
         }
     }
+    footer{
+        h4{
+            font-size: 1.5rem;
+        }
+    }
 }
 
 /* Small phones and down */
-@media (max-width: 320px) {
+@media (max-width: 330px) {
     .homePage{
         h1{
             font-size: 5rem;
@@ -195,15 +207,11 @@
             }
         }
         form{
-            align-content: center;
             label{
                 font-size: 1.6rem;
                 padding-left: 1rem;
                 margin-right: 1rem;
                 }
-            input{
-                font-size: 1.6rem;
-            }
             .plantName, .plantCare {
                 display: flex;
                 flex-direction: column;
