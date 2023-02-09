@@ -1,0 +1,250 @@
+@use "../abstract/variables" as *;
+@media (max-width: 1200px) {
+    .homePage {
+        .changePage{
+            padding: 1rem 7rem;
+        }
+    }
+    .resultDisplay{
+        .complete{
+            margin-right: 0;
+        }
+    }
+}
+
+@media (max-width: 1040px) {
+    .contentPage{
+        .h2{
+            background-position: left;
+            height: 54vh;
+        }
+        form {
+            height: 30vh;
+            .plantInfo{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin:3rem 0 2rem 0;
+            }
+            label{
+                font-size: 2.4rem;
+            }
+            #plantName{
+                margin: 0;
+                font-size: 1.9rem;
+                flex-basis: 45%;
+            }
+            #wateringFreq {
+                margin: 0;
+                font-size: 1.9rem;
+                flex-basis: 45%;
+            }
+            .add{
+                margin-top: 2rem;
+            }
+        }
+        .resultDisplay{
+            .remove{
+                margin-left: 1rem;
+            }
+        }
+    }
+}
+
+
+/* Portrait tablet and small desktops */
+@media (max-width: 945px) {
+    .contentPage{
+        form{
+            .plantName, .plantCare {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 50rem;
+               label{
+                 font-size: 2.2rem;
+                 margin-bottom: 1.2rem;
+               }
+               input, select, option{
+                font-size: 2rem;
+               };
+            }
+        }
+    }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 810px) {
+    .homePage{
+        h1{
+            font-size: 8rem;
+        }
+    }
+    .contentPage{
+        h2{
+            font-size: 7rem;
+        }
+        form{
+            .plantInfo {
+                flex-direction: column;
+                margin: 0;
+            }
+            label{
+                font-size: 1.8rem;
+                padding-left: 1rem;
+                margin-right: 1rem;
+                }
+            input, select, option {
+                font-size: 1.6rem;
+                width: 80%;
+            }
+            .add {
+                margin-top: .7rem;
+                min-width: 16rem;
+            }
+            .backToHome {
+                margin: 0;
+                min-width: 16rem;
+            }
+        }
+        // Buttons
+        .changePage, .remove, .complete{
+            width: 50%;
+            font-size: 1.6rem;
+            padding: 1rem 3rem;
+            text-align: center;
+        }
+        .resultDisplay{
+            width: 40vw;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .plantButtons{
+        button{
+            width: 16rem;
+        }
+        .complete{
+            margin-right: 0;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .plantButtons{
+        flex-direction: column;
+        .complete, .remove, .reset{
+            width: 140px;
+        }
+        .complete {
+            margin-bottom: 0;
+        }
+    }
+}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    .homePage{
+        h1{
+            font-size: 7rem;
+        }
+        .changePage{
+            padding: 1rem 6rem;
+        }
+    }
+    .contentPage{
+        h2{
+            font-size: 6rem;
+        }
+        form{
+            h4{
+                font-size: 1.6rem;
+                margin: 1rem 0;
+            }
+            label{
+                font-size: 1.6rem;
+                padding-left: 1rem;
+                margin-right: 1rem;
+                }
+            input, select, option {
+                font-size: 1.6rem;
+                width: 52%;
+            }
+            // // Buttons
+            .add, .backToHome {
+                width: 50%;
+                font-size: 1.5rem;
+            }
+        }
+        .resultDisplay{
+            width: 30vw;
+            .wrapper{
+                .progressBox{
+                    width: 10rem;
+                }
+            }
+            .plantButtons{
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+    footer{
+        h4{
+            font-size: 1.5rem;
+        }
+    }
+}
+
+/* Small phones and down */
+@media (max-width: 330px) {
+    .homePage{
+        h1{
+            font-size: 5rem;
+        }
+        .changePage{
+            padding: .2rem 5rem;
+        }
+    .contentPage{
+            h2{
+                font-size: 4rem;
+            }
+        }
+        form{
+            label{
+                font-size: 1.6rem;
+                padding-left: 1rem;
+                margin-right: 1rem;
+                }
+            .plantName, .plantCare {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            // Buttons
+            .add, .reset {
+                width: 50%;
+                font-size: 1.6rem;
+                padding: 5px 10px;
+            }
+            .resultDisplay{
+                .wrapper{
+                    .progressBox{
+                        width: 10rem;
+                    }
+                }
+                .plantButtons{
+                    display: flex;
+                    justify-content: center;
+                    padding: 4px 9px;
+                }
+            }
+        }
+        footer {
+            h4{
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
