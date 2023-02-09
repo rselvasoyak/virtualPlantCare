@@ -1,5 +1,10 @@
 @use "../abstract/variables" as *;
 @media (max-width: 1200px) {
+    .homePage {
+        .changePage{
+            padding: 1rem 7rem;
+        }
+    }
     .resultDisplay{
         .complete{
             margin-right: 0;
@@ -143,8 +148,8 @@
         h1{
             font-size: 7rem;
         }
-        .changePage {
-            width: 50%;
+        .changePage{
+            padding: 1rem 6rem;
         }
     }
     .contentPage{
@@ -197,10 +202,9 @@
         h1{
             font-size: 5rem;
         }
-        .changePage {
-            width: 50%;
+        .changePage{
+            padding: .2rem 5rem;
         }
-    }
     .contentPage{
             h2{
                 font-size: 4rem;
@@ -243,4 +247,4 @@
             }
         }
     }
-
+}
