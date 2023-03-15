@@ -53,7 +53,6 @@ const ContentPage = () => {
         } else {
           alert(`Please Name Your Plant Baby and Select Watering Frequency`)
         }
-        return;
     }
 
     // Completed Button
