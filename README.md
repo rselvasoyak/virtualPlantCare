@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Virtual Plant Care App
+  Are you tired of feeling like a forgetful plant parent? 🌻 💧
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  Keeping track of your plant's watering needs can be challenging, especially if you're a forgetful plant parent. Our virtual plant care app is designed to make the process easier for you. ⏲️
 
-## Available Scripts
+  By leveraging the power of Firebase and React, the app enables you to input and monitor the watering status of each plant, ensuring that they receive the care they need.
+<img width="1120" alt="plantCareResponsiveDes" src="https://user-images.githubusercontent.com/108034554/225177935-881a8728-4ead-4968-9bf5-9ee9e2890447.png">
 
-In the project directory, you can run:
+## Motivation
+  I created this virtual plant care app to make it easier for plant lovers like me to keep track of their plant's watering needs. My goal was to create a user-friendly and accessible solution for all, that promotes healthy and thriving plants. ✨
 
-### `npm start`
+## Features
+  - Plant database feature for storing and managing plant data using Firebase Real-time Database.
+  - Dynamically rendering the plant and watering data on the page.
+  - Conditionally rendered watering tracker and respective tracking functionality to help users keep track of when their plants need watering.I created this app to help plant parents keep track of their plants' watering needs and ensure that their plants stay healthy and happy.
+  - Ability to reset watering tracker or delete the plant individually.
+  - Responsive design optimized for use on desktop and mobile devices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Built With
+  - React.js
+  - Firebase
+  - Sass
+  - CSS
+  - HTML5
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Building the Project
+  - Used React, Firebase, and Material-UI to build the app.
+  - Designed a watering tracker feature that accurately tracked the plant's watering needs.
+  - Tested the app thoroughly and deployed it to a Firebase hosting environment.
 
-### `npm test`
+      Process:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+      - Sketched out the user interface and functionality on paper.
+      - Built the basic components of the app using React.
+      - Wrote the HTML code for the input fields and buttons needed for users to input and store plant data.
+      - Added CSS styling to make the inputs and buttons look visually appealing and intuitive to use.
+      - Developed the watering tracker feature that gets conditionally rendered to visually tract the watering status.
+      - Used Git for version control and tested the app frequently.
 
-### `npm run build`
+## Acknowledgements
+  This project was created during my study in Juno College of Technology. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contact
+  If you have any questions or feedback about the app, I would love to hear from you! 📣
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  You can reach me by email at rselvasoyak@gmail.com. 📫
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  Additionally, you can check out my other projects on my GitHub profile [Rana’s Repository](https://github.com/rselvasoyak?tab=repositories). or check my portfolio at [ranasoyakcodes.dev](https://ranasoyakcodes.dev) 
 
-### `npm run eject`
+  Thank you for using my app! ✨
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Preview:
+  ### Home Page: 
+  <img width="1120" alt="plantCareHome" src="https://user-images.githubusercontent.com/108034554/225177648-40290a25-3150-40d0-965f-f0ff0bec2f17.png">
+  ### Content Page - Input Form 
+  <img width="1114" alt="plantCareContent" src="https://user-images.githubusercontent.com/108034554/225177668-d630b8d6-0b7d-460d-a065-2d9cc5faafae.png">
+  ### Content Page - Individual Plants 
+  <img width="1120" alt="plantCarePlantList" src="https://user-images.githubusercontent.com/108034554/225177699-34d52e03-bce1-4057-9939-fc015d2ef982.png">
